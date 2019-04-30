@@ -1,0 +1,15 @@
+{
+  "presets": ["@babel/preset-env"],
+  "plugins": [
+    ["babel-plugin-import", { "libraryName": "qs" }, "qs"],
+    [
+      "babel-plugin-import",
+      {
+        "libraryName": "ramda",
+        "libraryDirectory": "es",
+        "camel2DashComponentName": false
+      },
+      "ramda"
+    ]
+  ]
+}

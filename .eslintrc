@@ -1,0 +1,10 @@
+{
+  "root": true,
+  "extends": ["airbnb-base", "plugin:prettier/recommended"],
+  "parserOptions": {
+    "sourceType": "script"
+  },
+  "rules": {
+    "import/prefer-default-export": "off"
+  }
+}

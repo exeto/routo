@@ -1,0 +1,40 @@
+{
+  "name": "@routo/core",
+  "version": "0.0.0",
+  "description": "Simple router for Redux",
+  "repository": "exeto/routo",
+  "main": "lib/index.js",
+  "author": "Timofey Dergachev <t@exeto.me> (https://exeto.me/en)",
+  "license": "MIT",
+  "scripts": {
+    "build": "rm -rf lib && babel src -d lib",
+    "size": "yarn build && size-limit",
+    "test": "yarn size",
+    "prepublish": "yarn test"
+  },
+  "files": [
+    "lib",
+    "src"
+  ],
+  "keywords": [
+    "history",
+    "react",
+    "redux",
+    "route",
+    "router",
+    "routing"
+  ],
+  "dependencies": {
+    "history": "^4.7.2",
+    "path-to-regexp": "^3.0.0",
+    "qs": "^6.7.0",
+    "ramda": "^0.26.1"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.4.4",
+    "@babel/core": "^7.4.4",
+    "@babel/preset-env": "^7.4.4",
+    "babel-plugin-import": "^1.11.0",
+    "size-limit": "^1.3.0"
+  }
+}
