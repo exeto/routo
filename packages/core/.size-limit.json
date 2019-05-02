@@ -1,6 +1,7 @@
 [
   {
     "path": "lib/*.js",
-    "limit": "10 KB"
+    "limit": "10 KB",
+    "running": false
   }
 ]
