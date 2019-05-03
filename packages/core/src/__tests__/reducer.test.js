@@ -1,11 +1,9 @@
 import { NOT_FOUND } from '../consts';
 import { createReducer } from '../reducer';
-import { initialState, createRoutes } from './reducer.fixtures';
+import { initialState } from './reducer.fixtures';
+import { routes } from './fixtures';
 
-const reducer = createReducer({
-  initialState,
-  routes: createRoutes(),
-});
+const reducer = createReducer({ initialState, routes });
 
 test('reducer', () => {
   let state = reducer(undefined, { type: 'INIT' });
