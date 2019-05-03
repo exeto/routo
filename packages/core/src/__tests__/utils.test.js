@@ -14,6 +14,8 @@ import {
   notFoundRoute,
   simpleRoute,
   withParamsRoute,
+} from './fixtures';
+import {
   queryParamsString,
   queryParams,
   createHistory,
