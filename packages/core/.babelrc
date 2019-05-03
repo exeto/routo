@@ -6,7 +6,7 @@
       "babel-plugin-import",
       {
         "libraryName": "ramda",
-        "libraryDirectory": "es",
+        "libraryDirectory": "src",
         "camel2DashComponentName": false
       },
       "ramda"
