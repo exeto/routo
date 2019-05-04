@@ -11,3 +11,8 @@ steps:
     image: node:10.15.3-alpine
     commands:
       - yarn test
+      - apk add --no-cache git
+      - yarn codecov
+    environment:
+      CODECOV_TOKEN:
+        from_secret: codecov-token

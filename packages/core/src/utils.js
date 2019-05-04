@@ -34,7 +34,7 @@ export const parseQueryParams = search =>
   parse(search, { ignoreQueryPrefix: true });
 
 export const stringifyQueryParams = queryParams =>
-  stringify(queryParams, { addQueryPrefix: true });
+  stringify(queryParams, { addQueryPrefix: true, encode: false });
 
 export const getInitialState = ({ routes, history }) => {
   const { pathname, search } = history.location;
