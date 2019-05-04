@@ -9,6 +9,7 @@ describe('routes', () => {
   it('should find route by type', () => {
     const routes = createRoutes(rawRoutes);
 
+    expect(routes.getByType('foo')).toBe(null);
     expect(routes.getByType(NOT_FOUND)).toEqual(notFoundRoute);
     expect(routes.getByType(simpleRoute.type)).toEqual(simpleRoute);
     expect(routes.getByType(withParamsRoute.type)).toEqual(withParamsRoute);

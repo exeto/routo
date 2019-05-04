@@ -7,7 +7,7 @@
   "author": "Timofey Dergachev <t@exeto.me> (https://exeto.me/en)",
   "license": "MIT",
   "scripts": {
-    "build": "rm -rf lib && babel src -d lib",
+    "build": "rm -rf lib && babel src -d lib --ignore **/__tests__,**/*.test.js",
     "size": "yarn build && size-limit",
     "test": "jest --coverage && yarn size",
     "prepublishOnly": "yarn test"
