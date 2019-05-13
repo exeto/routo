@@ -15,6 +15,6 @@ package-lock.json
 .idea/
 .vscode/
 
-# CORE
-/packages/core/lib/
-/packages/core/coverage/
+# PACKAGES
+/packages/*/lib/
+/packages/*/coverage/
