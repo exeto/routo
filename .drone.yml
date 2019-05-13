@@ -1,3 +1,4 @@
+---
 kind: pipeline
 name: default
 
@@ -16,3 +17,7 @@ steps:
     environment:
       CODECOV_TOKEN:
         from_secret: codecov-token
+
+---
+kind: signature
+hmac: 75697c1860eac59fcb84d01f3d305df332a32116a86a684a1d0b9ed52d884e1c
