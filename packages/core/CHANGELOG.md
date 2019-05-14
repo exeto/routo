@@ -1,3 +1,7 @@
+# 0.2.0 / 2019-05-14
+
+- Update README
+
 # 0.1.2 / 2019-05-09
 
 - Disable encoding for query stringify

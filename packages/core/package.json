@@ -1,10 +1,10 @@
 {
   "name": "@routo/core",
-  "version": "0.1.2",
+  "version": "0.2.0",
   "description": "Simple router for Redux",
   "repository": {
-    "type" : "git",
-    "url" : "https://github.com/exeto/routo.git",
+    "type": "git",
+    "url": "https://github.com/exeto/routo.git",
     "directory": "packages/core"
   },
   "main": "lib/index.js",
