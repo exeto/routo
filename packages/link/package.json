@@ -13,7 +13,7 @@
   "scripts": {
     "build": "rm -rf lib && NODE_ENV=production babel src -d lib --ignore **/__tests__,**/*.test.js",
     "codecov": "codecov --token=$CODECOV_TOKEN -F link",
-    "prepublishOnly": "yarn test && yarn build"
+    "prepublishOnly": "yarn build"
   },
   "files": [
     "lib",
