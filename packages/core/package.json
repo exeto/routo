@@ -19,7 +19,10 @@
   },
   "files": [
     "lib",
-    "src"
+    "src",
+    "CHANGELOG.md",
+    "LICENSE.md",
+    "README.md"
   ],
   "keywords": [
     "history",
