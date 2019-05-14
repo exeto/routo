@@ -2,7 +2,11 @@
   "name": "@routo/core",
   "version": "0.1.2",
   "description": "Simple router for Redux",
-  "repository": "exeto/routo",
+  "repository": {
+    "type" : "git",
+    "url" : "https://github.com/exeto/routo.git",
+    "directory": "packages/core"
+  },
   "main": "lib/index.js",
   "author": "Timofey Dergachev <t@exeto.me> (https://exeto.me/en)",
   "license": "MIT",
@@ -15,7 +19,10 @@
   },
   "files": [
     "lib",
-    "src"
+    "src",
+    "CHANGELOG.md",
+    "LICENSE.md",
+    "README.md"
   ],
   "keywords": [
     "history",

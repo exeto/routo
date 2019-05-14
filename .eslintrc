@@ -9,7 +9,7 @@
   },
   "overrides": [
     {
-      "files": ["packages/core/src/**/*.js"],
+      "files": ["packages/*/src/**/*.js"],
       "parserOptions": {
         "sourceType": "module"
       }

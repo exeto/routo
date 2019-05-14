@@ -1,5 +1,5 @@
 node_modules/
 !.eslintrc.js
 
-# CORE
-/packages/core/lib/
+# PACKAGES
+/packages/*/lib/
