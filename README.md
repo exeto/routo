@@ -2,6 +2,8 @@
 
 > Routo workspace package
 
+Example of use - [react-starter](https://github.com/exeto/react-starter)
+
 ## Packages
 
 - [@routo/core](packages/core)
