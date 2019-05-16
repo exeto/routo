@@ -30,9 +30,9 @@
     "redux"
   ],
   "peerDependencies": {
-    "@routo/core": "^0.1.2",
-    "react": "^16.8.6",
-    "react-redux": "^7.0.3"
+    "@routo/core": "^0.2.0",
+    "react": "^16.8.0",
+    "react-redux": "^7.0.0"
   },
   "dependencies": {
     "@babel/runtime": "^7.4.4",
