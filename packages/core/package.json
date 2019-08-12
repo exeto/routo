@@ -45,6 +45,6 @@
     "babel-plugin-import": "^1.11.0",
     "codecov": "^3.3.0",
     "jest": "^24.7.1",
-    "size-limit": "^1.3.0"
+    "size-limit": "^2.0.2"
   }
 }
