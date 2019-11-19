@@ -1,4 +1,4 @@
-import pathToRegexp from 'path-to-regexp';
+import { pathToRegexp, compile } from 'path-to-regexp';
 import { parse, stringify } from 'qs';
 
 import { NOT_FOUND } from './consts';
@@ -60,7 +60,7 @@ export const getHistoryMethod = action => {
   return mapping[action] || 'push';
 };
 
-export const createToPath = path => pathToRegexp.compile(path);
+export const createToPath = path => compile(path);
 
 export const isActive = (location, state) =>
   location.pathname === state.pathname && location.search === state.search;
