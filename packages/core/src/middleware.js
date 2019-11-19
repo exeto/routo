@@ -1,4 +1,4 @@
-import pathToRegexp from 'path-to-regexp';
+import { compile } from 'path-to-regexp';
 import { omit, path } from 'ramda';
 
 import { NOT_FOUND } from './consts';
@@ -48,7 +48,7 @@ export const createMiddleware = ({ routes, history }) => {
         pathname:
           route.type === NOT_FOUND
             ? history.location.pathname
-            : pathToRegexp.compile(route.path)(action.payload),
+            : compile(route.path)(action.payload),
       };
 
       const result = next({ ...action, meta });

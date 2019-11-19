@@ -34,7 +34,7 @@
   ],
   "dependencies": {
     "history": "^4.7.2",
-    "path-to-regexp": "^3.0.0",
+    "path-to-regexp": "^5.0.0",
     "qs": "^6.7.0",
     "ramda": "^0.26.1"
   },
