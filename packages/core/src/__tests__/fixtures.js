@@ -17,16 +17,16 @@ export const simpleRoute = {
 export const withParamsRoute = {
   keys: [
     {
-      delimiter: '/',
+      modifier: '',
       name: 'id',
-      optional: false,
-      pattern: '[^\\/]+?',
+      pattern: '[^\\/#\\?]+?',
       prefix: '/',
-      repeat: false,
+      suffix: '',
     },
   ],
   path: '/posts/:id',
-  regexp: /^\/posts\/([^/]+?)$/i,
+  // eslint-disable-next-line no-useless-escape
+  regexp: /^\/posts(?:\/([^\/#\?]+?))$/i,
   type: 'router/POST',
 };
 
