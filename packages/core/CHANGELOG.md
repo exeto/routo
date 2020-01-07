@@ -1,3 +1,7 @@
+# 0.3.0 / 2020-01-07
+
+- Update packages
+
 # 0.2.0 / 2019-05-14
 
 - Update README
