@@ -12,10 +12,14 @@ export const getParams = (
     return {};
   }
 
-  const params = route.regexp.exec(pathname)?.slice(1);
+  const params = pathname.match(route.regexp)?.slice(1);
 
-  return route.keys.reduce((acc, { name }, index) => {
-    acc[name] = params[index];
+  if (!params) {
+    return {};
+  }
+
+  return route.keys.reduce((acc: { [key: string]: string }, key, index) => {
+    acc[key.name] = params[index];
 
     return acc;
   }, {});

@@ -4,6 +4,8 @@ import { Route, State } from './types';
 import { createRouteStorage } from './routes';
 import { getInitialState } from './utils';
 
+export { NOT_FOUND } from './consts';
+
 export type Router = {
   getState(): State;
 };
@@ -17,9 +19,9 @@ export const createRouter = (routes: Route[], options?: Options): Router => {
   const routeStorage = createRouteStorage(routes);
   const state = getInitialState(routeStorage, history);
 
-  return Object.freeze({
-    getState() {
+  return {
+    getState(): State {
       return state;
     },
-  });
+  };
 };

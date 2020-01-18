@@ -22,10 +22,7 @@ export const createRouteStorage = (routes: Route[]): RouteStorage => {
     },
 
     getByPathname(pathname: string): ExtendedRoute | null {
-      return (
-        extendedRoutes.find(({ regexp }) => regexp && regexp.test(pathname)) ||
-        null
-      );
+      return extendedRoutes.find(({ regexp }) => regexp.test(pathname)) || null;
     },
   };
 };
