@@ -1,16 +1,25 @@
 {
   "root": true,
-  "extends": ["airbnb-base", "plugin:prettier/recommended"],
+  "parser": "@typescript-eslint/parser",
+  "extends": [
+    "airbnb/base",
+    "plugin:@typescript-eslint/eslint-recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:import/typescript",
+    "plugin:prettier/recommended",
+    "prettier/@typescript-eslint"
+  ],
   "parserOptions": {
     "sourceType": "script"
   },
   "rules": {
     "import/prefer-default-export": "off",
+    "import/extensions": "off",
     "strict": ["error", "global"]
   },
   "overrides": [
     {
-      "files": ["packages/*/src/**/*.js"],
+      "files": ["**/*.ts"],
       "parserOptions": {
         "sourceType": "module"
       }

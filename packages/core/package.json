@@ -1,7 +1,7 @@
 {
   "name": "@routo/core",
   "version": "0.3.0",
-  "description": "Simple router for Redux",
+  "description": "Simple framework-agnostic router",
   "repository": {
     "type": "git",
     "url": "https://github.com/exeto/routo.git",
@@ -11,7 +11,7 @@
   "author": "Timofey Dergachev <t@exeto.me> (https://exeto.me/en)",
   "license": "MIT",
   "scripts": {
-    "build": "rm -rf lib && babel src -d lib --ignore **/__tests__,**/*.test.js",
+    "build": "rm -rf lib && tsc",
     "codecov": "codecov --token=$CODECOV_TOKEN -F core",
     "size": "yarn build && size-limit",
     "test": "jest --coverage && yarn size",
@@ -26,8 +26,6 @@
   ],
   "keywords": [
     "history",
-    "react",
-    "redux",
     "route",
     "router",
     "routing"
@@ -35,16 +33,14 @@
   "dependencies": {
     "history": "^4.7.2",
     "path-to-regexp": "^6.1.0",
-    "qs": "^6.7.0",
-    "ramda": "^0.26.1"
+    "qs": "^6.7.0"
   },
   "devDependencies": {
-    "@babel/cli": "^7.4.4",
-    "@babel/core": "^7.4.4",
-    "@babel/preset-env": "^7.4.4",
     "@size-limit/preset-small-lib": "^3.0.0",
-    "babel-plugin-import": "^1.11.0",
+    "@types/history": "^4.7.4",
+    "@types/qs": "^6.9.0",
     "codecov": "^3.3.0",
-    "jest": "^24.7.1"
+    "jest": "^24.7.1",
+    "typescript": "^3.7.5"
   }
 }

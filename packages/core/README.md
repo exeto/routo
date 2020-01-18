@@ -1,6 +1,6 @@
 # @routo/core
 
-> Simple router for Redux
+> Simple framework-agnostic router
 
 ## Install
 

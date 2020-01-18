@@ -1,4 +1,0 @@
-{
-  "presets": [["babel-preset-react-app", { "absoluteRuntime": false }]],
-  "plugins": ["@babel/plugin-transform-modules-commonjs"]
-}
