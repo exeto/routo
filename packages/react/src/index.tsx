@@ -7,18 +7,28 @@ import React, {
 } from 'react';
 import { Router } from '@routo/core';
 
-export const context = createContext(null);
+export const Context = createContext<Router | null>(null);
 
-type ProviderProps = {
+type Props = {
   router: Router;
   children?: ReactNode;
 };
 
-export const Provider = ({ router, children }: ProviderProps) => (
-  <context.Provider value={router}>{children}</context.Provider>
+export const Provider = ({ router, children }: Props) => (
+  <Context.Provider value={router}>{children}</Context.Provider>
 );
 
-export const useRouter = (): Router => useContext(context);
+export const useRouter = (): Router => {
+  const router = useContext(Context);
+
+  if (!router) {
+    throw new Error(
+      'Could not find @routo/react context value; please ensure the component is wrapped in a <Provider>',
+    );
+  }
+
+  return router;
+};
 
 export const useRouterState = () => {
   const router = useRouter();

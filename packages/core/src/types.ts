@@ -20,7 +20,7 @@ export type State = {
   pathname: string;
   search: string;
   queryParams: object;
-  action: 'push' | 'replace' | 'pop' | null;
+  action: 'PUSH' | 'POP' | 'REPLACE' | null;
   params: object;
   prev: State | null;
 };
