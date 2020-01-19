@@ -7,7 +7,7 @@
   "author": "Timofey Dergachev <t@exeto.me> (https://exeto.me)",
   "license": "MIT",
   "scripts": {
-    "lint": "eslint --ext .js,.ts .",
+    "lint": "eslint --ext .js,.ts,.tsx .",
     "test": "lerna run build && yarn lint && lerna run test",
     "update-version": "lerna version --no-git-tag-version --no-push",
     "precommit": "lint-staged"
@@ -18,11 +18,16 @@
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^2.16.0",
     "@typescript-eslint/parser": "^2.16.0",
+    "babel-eslint": "^10.0.3",
     "eslint": "^6.2.0",
-    "eslint-config-airbnb": "^18.0.1",
     "eslint-config-prettier": "^6.9.0",
+    "eslint-config-react-app": "^5.1.0",
+    "eslint-plugin-flowtype": "^4.6.0",
     "eslint-plugin-import": "^2.16.0",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
     "eslint-plugin-prettier": "^3.0.1",
+    "eslint-plugin-react": "^7.18.0",
+    "eslint-plugin-react-hooks": "^2.3.0",
     "husky": "^4.0.7",
     "lerna": "^3.4.3",
     "lint-staged": "^9.1.0",
