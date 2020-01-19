@@ -14,7 +14,7 @@
     "build": "rm -rf lib && tsc",
     "codecov": "codecov --token=$CODECOV_TOKEN -F core",
     "size": "yarn build && size-limit",
-    "test": "jest --coverage && yarn size",
+    "test": "jest --coverage --passWithNoTests && yarn size",
     "prepublishOnly": "yarn test"
   },
   "files": [
