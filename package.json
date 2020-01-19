@@ -4,7 +4,7 @@
   "private": true,
   "description": "Routo workspace package",
   "repository": "exeto/routo",
-  "author": "Timofey Dergachev <t@exeto.me> (https://exeto.me/en)",
+  "author": "Timofey Dergachev <t@exeto.me> (https://exeto.me)",
   "license": "MIT",
   "scripts": {
     "lint": "eslint --ext .js,.ts .",

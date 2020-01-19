@@ -131,4 +131,4 @@ With queryParams (used [qs](https://github.com/ljharb/qs) package):
 
 ## License
 
-[MIT](LICENSE.md) © [Timofey Dergachev](https://exeto.me/)
+[MIT](LICENSE.md) © [Timofey Dergachev](https://exeto.me)

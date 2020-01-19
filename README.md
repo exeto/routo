@@ -11,4 +11,4 @@ Example of use - [react-starter](https://github.com/exeto/react-starter)
 
 ## License
 
-[MIT](LICENSE.md) © [Timofey Dergachev](https://exeto.me/)
+[MIT](LICENSE.md) © [Timofey Dergachev](https://exeto.me)
