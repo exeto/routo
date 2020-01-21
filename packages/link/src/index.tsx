@@ -4,7 +4,7 @@ import { useRouterState, useRouter } from '@routo/react';
 import { clsx } from './utils';
 
 type Props = {
-  id: string;
+  to: string;
   params?: object;
   queryParams?: object;
   action?: 'push' | 'replace';
@@ -17,7 +17,7 @@ type Props = {
 
 const Link = forwardRef(function Link(props: Props, ref) {
   const {
-    id,
+    to,
     params,
     queryParams,
     action = 'push',
@@ -31,7 +31,7 @@ const Link = forwardRef(function Link(props: Props, ref) {
   const router = useRouter();
   const { pathname } = useRouterState();
   const Component = component;
-  const href = router.createHref(id, { params, queryParams });
+  const href = router.createHref(to, { params, queryParams });
   const activeClass = href === pathname ? activeClassName : null;
 
   const handleClick = useCallback(
@@ -41,11 +41,11 @@ const Link = forwardRef(function Link(props: Props, ref) {
       }
 
       event.preventDefault();
-      router[action](id, { params, queryParams });
+      router[action](to, { params, queryParams });
 
       onClick();
     },
-    [action, id, onClick, params, queryParams, router],
+    [action, to, onClick, params, queryParams, router],
   );
 
   return (
