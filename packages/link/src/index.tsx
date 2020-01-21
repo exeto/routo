@@ -7,7 +7,7 @@ type Props = {
   id: string;
   params?: object;
   queryParams?: object;
-  action?: 'PUSH' | 'REPLACE';
+  action?: 'push' | 'replace';
   children?: ReactNode;
   className?: string;
   activeClassName?: string;
@@ -20,7 +20,7 @@ const Link = forwardRef(function Link(props: Props, ref) {
     id,
     params,
     queryParams,
-    action,
+    action = 'push',
     children,
     className,
     activeClassName,
@@ -31,7 +31,7 @@ const Link = forwardRef(function Link(props: Props, ref) {
   const router = useRouter();
   const { pathname } = useRouterState();
   const Component = component;
-  const href = null;
+  const href = router.createHref(id, { params, queryParams });
   const activeClass = href === pathname ? activeClassName : null;
 
   const handleClick = useCallback(
@@ -41,12 +41,7 @@ const Link = forwardRef(function Link(props: Props, ref) {
       }
 
       event.preventDefault();
-
-      router.transitionTo(id, {
-        action,
-        params,
-        queryParams,
-      });
+      router[action](id, { params, queryParams });
 
       onClick();
     },

@@ -23,13 +23,14 @@ type Unsubscribe = () => void;
 type LocationDescriptor = {
   params?: object;
   queryParams?: object;
-  action?: 'PUSH' | 'REPLACE';
 };
 
 export type Router = {
   getState(): State;
   subscribe(listener: Listener): Unsubscribe;
-  transitionTo(id: string, data?: LocationDescriptor): void;
+  push(id: string, data?: LocationDescriptor): void;
+  replace(id: string, data?: LocationDescriptor): void;
+  createHref(id: string, data?: LocationDescriptor): string;
 };
 
 export const createRouter = (routes: Route[], options?: Options): Router => {
@@ -55,6 +56,14 @@ export const createRouter = (routes: Route[], options?: Options): Router => {
     listeners.forEach(listener => listener(state));
   });
 
+  const getLocationData = (id: string, data?: LocationDescriptor) => {
+    const route = routeStorage.getById(id);
+    const pathname = route ? route.createPathname(data?.params || {}) : '/404';
+    const search = stringifyQueryParams(data?.queryParams || {});
+
+    return { pathname, search };
+  };
+
   return {
     getState() {
       return state;
@@ -70,19 +79,18 @@ export const createRouter = (routes: Route[], options?: Options): Router => {
       return unsubscribe;
     },
 
-    transitionTo(id, data) {
-      const route = routeStorage.getById(id);
-      const params = data?.params || {};
-      const pathname = route ? route.createPathname(params) : '/404';
-      const search = stringifyQueryParams(data?.queryParams || {});
-      const options = { pathname, search };
-      const action = data?.action || 'PUSH';
+    push(id, data) {
+      history.push(getLocationData(id, data));
+    },
 
-      if (action === 'PUSH') {
-        history.push(options);
-      } else if (action === 'REPLACE') {
-        history.replace(options);
-      }
+    replace(id, data) {
+      history.replace(getLocationData(id, data));
+    },
+
+    createHref(id, data) {
+      const { pathname, search } = getLocationData(id, data);
+
+      return `${pathname}${search}`;
     },
   };
 };
