@@ -1,4 +1,4 @@
-import { pathToRegexp, Key } from 'path-to-regexp';
+import { pathToRegexp, compile, Key } from 'path-to-regexp';
 
 import { Route, ExtendedRoute, RouteStorage } from './types';
 
@@ -10,6 +10,7 @@ const createRoute = (route: Route): ExtendedRoute => {
     ...route,
     regexp,
     keys,
+    createPathname: compile(route.path),
   };
 };
 

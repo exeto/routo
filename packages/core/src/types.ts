@@ -8,6 +8,7 @@ export type Route = {
 export type ExtendedRoute = Route & {
   keys: Key[];
   regexp: RegExp;
+  createPathname(params: object): string;
 };
 
 export type RouteStorage = {

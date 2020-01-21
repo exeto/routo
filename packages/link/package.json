@@ -1,0 +1,42 @@
+{
+  "name": "@routo/link",
+  "version": "0.3.0",
+  "description": "React Link component for @routo/core",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/exeto/routo.git",
+    "directory": "packages/link"
+  },
+  "main": "lib/index.js",
+  "author": "Timofey Dergachev <t@exeto.me> (https://exeto.me)",
+  "license": "MIT",
+  "scripts": {
+    "build": "rm -rf lib && tsc",
+    "codecov": "codecov --token=$CODECOV_TOKEN -F link",
+    "prepublishOnly": "yarn build"
+  },
+  "files": [
+    "lib",
+    "src",
+    "CHANGELOG.md",
+    "LICENSE.md",
+    "README.md"
+  ],
+  "keywords": [
+    "router",
+    "routo",
+    "link",
+    "react"
+  ],
+  "peerDependencies": {
+    "@routo/react": "^0.3.0",
+    "react": "^16.8.0"
+  },
+  "devDependencies": {
+    "@routo/react": "^0.3.0",
+    "@types/react": "^16.9.17",
+    "codecov": "^3.3.0",
+    "react": "^16.8.0",
+    "typescript": "^3.7.5"
+  }
+}
