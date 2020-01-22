@@ -39,6 +39,16 @@ export const createRouter = (routes: Route[], options?: Options): Router => {
   let state = getInitialState(routeStorage, history);
   let listeners: Listener[] = [];
 
+  const notify = () => {
+    const currentListeners = listeners.slice();
+
+    for (let i = 0; i < currentListeners.length; i++) {
+      const listener = currentListeners[i];
+
+      listener(state);
+    }
+  };
+
   history.listen((location, action) => {
     const { pathname, search } = location;
     const route = routeStorage.getByPathname(pathname);
@@ -53,7 +63,7 @@ export const createRouter = (routes: Route[], options?: Options): Router => {
       prev: null,
     };
 
-    listeners.forEach(listener => listener(state));
+    notify();
   });
 
   const getLocationData = (id: string, data?: LocationDescriptor) => {
@@ -70,10 +80,12 @@ export const createRouter = (routes: Route[], options?: Options): Router => {
     },
 
     subscribe(fn) {
-      listeners = [...listeners, fn];
+      listeners.push(fn);
 
       const unsubscribe = () => {
-        listeners = listeners.filter(listener => listener !== fn);
+        const index = listeners.indexOf(fn);
+
+        listeners.splice(index, 1);
       };
 
       return unsubscribe;

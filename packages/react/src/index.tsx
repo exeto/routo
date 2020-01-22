@@ -35,9 +35,18 @@ export const useRouterState = () => {
   const [state, setState] = useState(router.getState());
 
   useEffect(() => {
-    const unsubscribe = router.subscribe(setState);
+    let didCancel = false;
 
-    return unsubscribe;
+    const unsubscribe = router.subscribe(newState => {
+      if (!didCancel) {
+        setState(newState);
+      }
+    });
+
+    return () => {
+      didCancel = true;
+      unsubscribe();
+    };
   }, [router]);
 
   return state;
