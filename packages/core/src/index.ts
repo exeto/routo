@@ -60,7 +60,10 @@ export const createRouter = (routes: Route[], options?: Options): Router => {
       queryParams: parseQueryParams(search),
       action,
       params: getParams(route, pathname),
-      prev: null,
+      prev: {
+        ...state,
+        prev: null,
+      },
     };
 
     notify();
