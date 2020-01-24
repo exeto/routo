@@ -12,8 +12,8 @@ export type ExtendedRoute = Route & {
 };
 
 export type RouteStorage = {
-  getById(id: string): ExtendedRoute | null;
-  getByPathname(pathname: string): ExtendedRoute | null;
+  getById(id: string): ExtendedRoute;
+  getByPathname(pathname: string): ExtendedRoute;
 };
 
 export type State = {

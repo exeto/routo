@@ -14,16 +14,25 @@ const createRoute = (route: Route): ExtendedRoute => {
   };
 };
 
-export const createRouteStorage = (routes: Route[]): RouteStorage => {
-  const extendedRoutes = routes.map(createRoute);
+export const createRouteStorage = (
+  notFoundRoute: Route,
+  routes: Route[],
+): RouteStorage => {
+  const extendedRoutes = [...routes, notFoundRoute].map(createRoute);
+  const extendedNotFoundRoute = extendedRoutes[extendedRoutes.length - 1];
 
   return {
-    getById(id: string): ExtendedRoute | null {
-      return extendedRoutes.find(route => id === route.id) || null;
+    getById(id) {
+      return (
+        extendedRoutes.find(route => id === route.id) || extendedNotFoundRoute
+      );
     },
 
-    getByPathname(pathname: string): ExtendedRoute | null {
-      return extendedRoutes.find(({ regexp }) => regexp.test(pathname)) || null;
+    getByPathname(pathname) {
+      return (
+        extendedRoutes.find(({ regexp }) => regexp.test(pathname)) ||
+        extendedNotFoundRoute
+      );
     },
   };
 };

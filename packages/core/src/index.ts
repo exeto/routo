@@ -14,6 +14,7 @@ export { NOT_FOUND };
 
 type Options = {
   history?: History;
+  notFoundPath?: string;
 };
 
 type Listener = (state: State) => void;
@@ -34,8 +35,13 @@ export type Router = {
 };
 
 export const createRouter = (routes: Route[], options?: Options): Router => {
+  const notFoundRoute = {
+    id: NOT_FOUND,
+    path: options?.notFoundPath || '/404',
+  };
+
   const history = options?.history || createBrowserHistory();
-  const routeStorage = createRouteStorage(routes);
+  const routeStorage = createRouteStorage(notFoundRoute, routes);
   let state = getInitialState(routeStorage, history);
   let listeners: Listener[] = [];
 
@@ -71,7 +77,7 @@ export const createRouter = (routes: Route[], options?: Options): Router => {
 
   const getLocationData = (id: string, data?: LocationDescriptor) => {
     const route = routeStorage.getById(id);
-    const pathname = route ? route.createPathname(data?.params || {}) : '/404';
+    const pathname = route.createPathname(data?.params || {});
     const search = stringifyQueryParams(data?.queryParams || {});
 
     return { pathname, search };
