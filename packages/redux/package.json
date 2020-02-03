@@ -1,0 +1,39 @@
+{
+  "name": "@routo/redux",
+  "version": "0.3.0",
+  "description": "Redux bindings package for @routo/core",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/exeto/routo.git",
+    "directory": "packages/redux"
+  },
+  "main": "lib/index.js",
+  "author": "Timofey Dergachev <t@exeto.me> (https://exeto.me)",
+  "license": "MIT",
+  "scripts": {
+    "build": "rm -rf lib && tsc",
+    "codecov": "codecov --token=$CODECOV_TOKEN -F redux",
+    "prepublishOnly": "yarn build"
+  },
+  "files": [
+    "lib",
+    "src",
+    "CHANGELOG.md",
+    "LICENSE.md",
+    "README.md"
+  ],
+  "keywords": [
+    "redux",
+    "router",
+    "routo"
+  ],
+  "peerDependencies": {
+    "@routo/core": "^0.3.0",
+    "redux": "^4.0.0"
+  },
+  "devDependencies": {
+    "codecov": "^3.3.0",
+    "redux": "^4.0.5",
+    "typescript": "^3.7.5"
+  }
+}

@@ -32,6 +32,7 @@ export type Router = {
   push(id: string, data?: LocationDescriptor): void;
   replace(id: string, data?: LocationDescriptor): void;
   createHref(id: string, data?: LocationDescriptor): string;
+  hasId(id: string): boolean;
 };
 
 export const createRouter = (routes: Route[], options?: Options): Router => {
@@ -48,11 +49,7 @@ export const createRouter = (routes: Route[], options?: Options): Router => {
   const notify = () => {
     const currentListeners = listeners.slice();
 
-    for (let i = 0; i < currentListeners.length; i++) {
-      const listener = currentListeners[i];
-
-      listener(state);
-    }
+    currentListeners.forEach(listener => listener(state));
   };
 
   history.listen((location, action) => {
@@ -60,7 +57,7 @@ export const createRouter = (routes: Route[], options?: Options): Router => {
     const route = routeStorage.getByPathname(pathname);
 
     state = {
-      id: route?.id || NOT_FOUND,
+      id: route.id,
       pathname,
       search,
       queryParams: parseQueryParams(search),
@@ -112,6 +109,16 @@ export const createRouter = (routes: Route[], options?: Options): Router => {
       const { pathname, search } = getLocationData(id, data);
 
       return `${pathname}${search}`;
+    },
+
+    hasId(id) {
+      if (id === NOT_FOUND) {
+        return true;
+      }
+
+      const route = routeStorage.getById(id);
+
+      return route.id !== NOT_FOUND;
     },
   };
 };

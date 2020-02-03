@@ -2,16 +2,8 @@ import { History } from 'history';
 import { parse, stringify } from 'qs';
 
 import { RouteStorage, ExtendedRoute, State } from './types';
-import { NOT_FOUND } from './consts';
 
-export const getParams = (
-  route: ExtendedRoute | null,
-  pathname: string,
-): object => {
-  if (!route) {
-    return {};
-  }
-
+export const getParams = (route: ExtendedRoute, pathname: string): object => {
   const params = pathname.match(route.regexp)?.slice(1);
 
   if (!params) {
@@ -39,7 +31,7 @@ export const getInitialState = (
   const route = routeStorage.getByPathname(pathname);
 
   return {
-    id: route?.id || NOT_FOUND,
+    id: route.id,
     pathname,
     search,
     queryParams: parseQueryParams(search),
