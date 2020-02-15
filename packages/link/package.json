@@ -12,8 +12,7 @@
   "license": "MIT",
   "scripts": {
     "build": "rm -rf lib && tsc -p tsconfig.build.json",
-    "codecov": "codecov --token=$CODECOV_TOKEN -F link",
-    "prepublishOnly": "yarn build"
+    "codecov": "codecov --token=$CODECOV_TOKEN -F link"
   },
   "files": [
     "lib",

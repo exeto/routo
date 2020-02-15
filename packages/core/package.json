@@ -13,9 +13,7 @@
   "scripts": {
     "build": "rm -rf lib && tsc -p tsconfig.build.json",
     "codecov": "codecov --token=$CODECOV_TOKEN -F core",
-    "size": "yarn build && size-limit",
-    "test": "jest --coverage --passWithNoTests && yarn size",
-    "prepublishOnly": "yarn test"
+    "test": "jest --coverage --passWithNoTests && size-limit"
   },
   "files": [
     "lib",
