@@ -10,48 +10,31 @@ yarn add @routo/link
 
 ## Usage
 
+The `Link` component must have access to the router context, see [@routo/react](/packages/react/README.md) for details.
+
 ```js
-import { createLink } from '@routo/link';
-
-const routes = [
-  {
-    type: 'router/HOME',
-    path: '/',
-  },
-  {
-    type: 'router/POST',
-    path: '/posts/:id',
-  },
-];
-
-const Link = createLink(routes);
+import Link from '@routo/link';
 
 const Home = () => (
-  <ul>
-    {posts.map(post => (
-      <li key={post.id}>
-        <Link to={{
-          type: 'router/POST',
-          payload: {
-            id: String(post.id),
-          },
-        }}
-      </li>
-    ))}
-  </ul>
+  <Link to="router/POST" params={{ id: '42' }}>
+    Post #42
+  </Link>
 );
 ```
 
 ## Props
 
-| Name            | Type      | Default | Description                                                                                |
-| --------------- | --------- | ------- | ------------------------------------------------------------------------------------------ |
-| to \*           | object    |         | Redux action. [Details](/packages/core/README.md#navigation).                              |
-| children \*     | node      |         | The content of the link.                                                                   |
-| className       | string    |         | Applied to the root element.                                                               |
-| activeClassName | string    |         | Applied to the root element when current url opened.                                       |
-| component       | Component | 'a'     | The component used for the root node. Either a string to use a DOM element or a component. |
-| onClick         | function  |         | Called after updating the current route.                                                   |
+| Name            | Type                | Default | Description                                                                                |
+| --------------- | ------------------- | ------- | ------------------------------------------------------------------------------------------ |
+| to \*           | string              |         | Route ID.                                                                                  |
+| params          | object              |         |                                                                                            |
+| queryParams     | object              |         |                                                                                            |
+| action          | 'push' \| 'replace' | 'push'  |                                                                                            |
+| children        | node                |         | The content of the link.                                                                   |
+| className       | string              |         | Applied to the root element.                                                               |
+| activeClassName | string              |         | Applied to the root element when current url opened.                                       |
+| component       | elementType         | 'a'     | The component used for the root node. Either a string to use a DOM element or a component. |
+| onClick         | function            |         | Called after updating the current route.                                                   |
 
 ## License
 
