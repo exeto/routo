@@ -8,7 +8,8 @@
   "license": "MIT",
   "scripts": {
     "lint": "eslint --ext .js,.ts,.tsx .",
-    "test": "lerna run build && yarn lint && lerna run test",
+    "test": "yarn build && yarn lint && lerna run test",
+    "build": "lerna run build",
     "update-version": "lerna version --no-git-tag-version --no-push",
     "precommit": "lint-staged"
   },

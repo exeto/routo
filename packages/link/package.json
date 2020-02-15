@@ -11,7 +11,7 @@
   "author": "Timofey Dergachev <t@exeto.me> (https://exeto.me)",
   "license": "MIT",
   "scripts": {
-    "build": "rm -rf lib && tsc",
+    "build": "rm -rf lib && tsc -p tsconfig.build.json",
     "codecov": "codecov --token=$CODECOV_TOKEN -F link",
     "prepublishOnly": "yarn build"
   },
