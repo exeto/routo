@@ -2,12 +2,7 @@ import { createBrowserHistory, History } from 'history';
 
 import { Route, State } from './types';
 import { createRouteStorage } from './routes';
-import {
-  getInitialState,
-  getParams,
-  parseQueryParams,
-  stringifyQueryParams,
-} from './utils';
+import { createState, stringifyQueryParams } from './utils';
 import { NOT_FOUND } from './consts';
 
 export { NOT_FOUND };
@@ -31,6 +26,7 @@ export type Router = {
   subscribe(listener: Listener): Unsubscribe;
   push(id: string, data?: LocationDescriptor): void;
   replace(id: string, data?: LocationDescriptor): void;
+  markAsNotFound(): void;
   createHref(id: string, data?: LocationDescriptor): string;
   hasId(id: string): boolean;
 };
@@ -43,7 +39,7 @@ export const createRouter = (routes: Route[], options?: Options): Router => {
 
   const history = options?.history || createBrowserHistory();
   const routeStorage = createRouteStorage(notFoundRoute, routes);
-  let state = getInitialState(routeStorage, history);
+  let state = createState(routeStorage, history.location);
   let listeners: Listener[] = [];
 
   const notify = () => {
@@ -53,20 +49,10 @@ export const createRouter = (routes: Route[], options?: Options): Router => {
   };
 
   history.listen((location, action) => {
-    const { pathname, search } = location;
-    const route = routeStorage.getByPathname(pathname);
-
     state = {
-      id: route.id,
-      pathname,
-      search,
-      queryParams: parseQueryParams(search),
+      ...createState(routeStorage, location),
       action,
-      params: getParams(route, pathname),
-      prev: {
-        ...state,
-        prev: null,
-      },
+      prev: { ...state, prev: null },
     };
 
     notify();
@@ -103,6 +89,17 @@ export const createRouter = (routes: Route[], options?: Options): Router => {
 
     replace(id, data) {
       history.replace(getLocationData(id, data));
+    },
+
+    markAsNotFound() {
+      state = {
+        ...state,
+        id: NOT_FOUND,
+        action: 'REPLACE',
+        prev: { ...state, prev: null },
+      };
+
+      notify();
     },
 
     createHref(id, data) {
