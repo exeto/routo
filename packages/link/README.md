@@ -5,7 +5,7 @@
 ## Install
 
 ```sh
-yarn add @routo/link
+yarn add @routo/core @routo/react @routo/link
 ```
 
 ## Usage

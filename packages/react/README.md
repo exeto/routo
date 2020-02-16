@@ -5,31 +5,47 @@
 ## Install
 
 ```sh
-yarn add @routo/react
+yarn add @routo/core @routo/react
 ```
 
 ## Usage
 
 ```js
-import { createRouter } from '@routo/core;
-import { Provider } from '@routo/react';
+import { createRouter, NOT_FOUND } from '@routo/core';
+import { Provider, useRouterState } from '@routo/react';
+
+const HOME = 'router/HOME';
+const POST = 'router/POST';
 
 const routes = [
   {
-    id: 'router/HOME',
+    id: HOME,
     path: '/',
   },
   {
-    id: 'router/POST',
+    id: POST,
     path: '/posts/:id',
   },
 ];
 
 const router = createRouter(routes);
 
+const mapping = {
+  [HOME]: () => 'Home',
+  [POST]: () => 'Post',
+  [NOT_FOUND]: () => 'Not Found',
+};
+
+const Router = () => {
+  const state = useRouterState();
+  const Component = mapping[state.id];
+
+  return <Component />;
+};
+
 const Root = () => (
   <Provider router={router}>
-    <App />
+    <Router />
   </Provider>
 );
 ```
