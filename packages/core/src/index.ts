@@ -45,7 +45,7 @@ export const createRouter = (routes: Route[], options?: Options): Router => {
   const notify = () => {
     const currentListeners = listeners.slice();
 
-    currentListeners.forEach(listener => listener(state));
+    currentListeners.forEach((listener) => listener(state));
   };
 
   history.listen((location, action) => {

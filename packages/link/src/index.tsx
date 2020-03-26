@@ -35,7 +35,7 @@ const Link = forwardRef(function Link(props: Props, ref) {
   const activeClass = href === pathname ? activeClassName : null;
 
   const handleClick = useCallback(
-    event => {
+    (event) => {
       if (event.metaKey || event.altKey || event.ctrlKey || event.shiftKey) {
         return;
       }

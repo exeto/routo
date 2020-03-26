@@ -24,7 +24,7 @@ export const createRouteStorage = (
   return {
     getById(id) {
       return (
-        extendedRoutes.find(route => id === route.id) || extendedNotFoundRoute
+        extendedRoutes.find((route) => id === route.id) || extendedNotFoundRoute
       );
     },
 

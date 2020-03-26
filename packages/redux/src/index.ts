@@ -9,9 +9,9 @@ export const markAsNotFound = () => ({ type: MARK_AS_NOT_FOUND });
 
 export const createMiddleware = (router: Router): Middleware => {
   return ({ dispatch, getState }) => {
-    router.subscribe(state => dispatch({ type: SYNC, payload: state }));
+    router.subscribe((state) => dispatch({ type: SYNC, payload: state }));
 
-    return next => action => {
+    return (next) => (action) => {
       const { type, payload } = action;
 
       if (type === MARK_AS_NOT_FOUND) {
