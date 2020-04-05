@@ -2,7 +2,7 @@ import { pathToRegexp, compile, Key } from 'path-to-regexp';
 
 import { Route, ExtendedRoute, RouteStorage } from './types';
 
-const createRoute = (route: Route): ExtendedRoute => {
+export const createRoute = (route: Route): ExtendedRoute => {
   const keys: Key[] = [];
   const regexp = pathToRegexp(route.path, keys, { strict: true });
 

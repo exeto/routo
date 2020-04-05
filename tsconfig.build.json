@@ -1,4 +1,5 @@
 {
+  "exclude": ["**/*.test.ts", "**/__tests__/*.ts"],
   "compilerOptions": {
     "target": "es5",
     "module": "commonjs",

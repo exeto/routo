@@ -1,10 +1,11 @@
 'use strict';
 
 module.exports = {
-  testMatch: ['**/*.test.js'],
+  preset: 'ts-jest',
+  testEnvironment: 'node',
   collectCoverageFrom: [
-    'src/**/*.js',
-    '!src/**/__tests__/**/*.js',
-    '!src/**/*.test.js',
+    'src/**/*.ts',
+    '!src/**/__tests__/**/*.ts',
+    '!src/**/*.test.ts',
   ],
 };

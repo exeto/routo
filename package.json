@@ -8,7 +8,7 @@
   "license": "MIT",
   "scripts": {
     "lint": "eslint --ext .js,.ts,.tsx .",
-    "test": "yarn lint && lerna run build && lerna run test",
+    "test": "yarn lint && lerna run test",
     "codecov": "lerna run codecov",
     "precommit": "lint-staged"
   },
