@@ -1,0 +1,183 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`createRouter getState should return initial state 1`] = `
+Object {
+  "action": null,
+  "id": "router/HOME",
+  "params": Object {},
+  "pathname": "/",
+  "prev": null,
+  "queryParams": Object {},
+  "search": "",
+}
+`;
+
+exports[`createRouter getState should return new state after back 1`] = `
+Object {
+  "action": "POP",
+  "id": "router/HOME",
+  "params": Object {},
+  "pathname": "/",
+  "prev": Object {
+    "action": "REPLACE",
+    "id": "router/POSTS",
+    "params": Object {},
+    "pathname": "/posts",
+    "prev": null,
+    "queryParams": Object {},
+    "search": "",
+  },
+  "queryParams": Object {},
+  "search": "",
+}
+`;
+
+exports[`createRouter getState should return new state after forward 1`] = `
+Object {
+  "action": "POP",
+  "id": "router/POSTS",
+  "params": Object {},
+  "pathname": "/posts",
+  "prev": Object {
+    "action": "POP",
+    "id": "router/HOME",
+    "params": Object {},
+    "pathname": "/",
+    "prev": null,
+    "queryParams": Object {},
+    "search": "",
+  },
+  "queryParams": Object {},
+  "search": "",
+}
+`;
+
+exports[`createRouter getState should return new state after push 1`] = `
+Object {
+  "action": "PUSH",
+  "id": "router/POST",
+  "params": Object {
+    "id": "42",
+  },
+  "pathname": "/posts/42",
+  "prev": Object {
+    "action": null,
+    "id": "router/HOME",
+    "params": Object {},
+    "pathname": "/",
+    "prev": null,
+    "queryParams": Object {},
+    "search": "",
+  },
+  "queryParams": Object {},
+  "search": "",
+}
+`;
+
+exports[`createRouter getState should return new state after push with query params 1`] = `
+Object {
+  "action": "PUSH",
+  "id": "router/POSTS",
+  "params": Object {},
+  "pathname": "/posts",
+  "prev": Object {
+    "action": "POP",
+    "id": "router/POSTS",
+    "params": Object {},
+    "pathname": "/posts",
+    "prev": null,
+    "queryParams": Object {},
+    "search": "",
+  },
+  "queryParams": Object {
+    "hello": "world",
+  },
+  "search": "?hello=world",
+}
+`;
+
+exports[`createRouter getState should return new state after replace 1`] = `
+Object {
+  "action": "REPLACE",
+  "id": "router/POSTS",
+  "params": Object {},
+  "pathname": "/posts",
+  "prev": Object {
+    "action": "PUSH",
+    "id": "router/POST",
+    "params": Object {
+      "id": "42",
+    },
+    "pathname": "/posts/42",
+    "prev": null,
+    "queryParams": Object {},
+    "search": "",
+  },
+  "queryParams": Object {},
+  "search": "",
+}
+`;
+
+exports[`createRouter subscribe should run listener after history change 1`] = `
+[MockFunction] {
+  "calls": Array [
+    Array [
+      Object {
+        "action": "PUSH",
+        "id": "router/POSTS",
+        "params": Object {},
+        "pathname": "/posts",
+        "prev": Object {
+          "action": null,
+          "id": "router/HOME",
+          "params": Object {},
+          "pathname": "/",
+          "prev": null,
+          "queryParams": Object {},
+          "search": "",
+        },
+        "queryParams": Object {},
+        "search": "",
+      },
+    ],
+  ],
+  "results": Array [
+    Object {
+      "type": "return",
+      "value": undefined,
+    },
+  ],
+}
+`;
+
+exports[`createRouter subscribe should run listener after history change 2`] = `
+[MockFunction] {
+  "calls": Array [
+    Array [
+      Object {
+        "action": "PUSH",
+        "id": "router/POSTS",
+        "params": Object {},
+        "pathname": "/posts",
+        "prev": Object {
+          "action": null,
+          "id": "router/HOME",
+          "params": Object {},
+          "pathname": "/",
+          "prev": null,
+          "queryParams": Object {},
+          "search": "",
+        },
+        "queryParams": Object {},
+        "search": "",
+      },
+    ],
+  ],
+  "results": Array [
+    Object {
+      "type": "return",
+      "value": undefined,
+    },
+  ],
+}
+`;

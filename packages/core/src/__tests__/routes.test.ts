@@ -7,7 +7,6 @@ const notFoundRoute = {
 };
 
 const HOME = 'router/HOME';
-
 const POST = 'router/POST';
 
 const routes = [
@@ -72,7 +71,7 @@ describe('createRoute', () => {
   });
 });
 
-describe('RouteStorage instance', () => {
+describe('createRouteStorage', () => {
   const routeStorage = createRouteStorage(notFoundRoute, routes);
 
   describe('getById', () => {
