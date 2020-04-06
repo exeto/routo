@@ -1,23 +1,9 @@
 import { Location } from 'history';
 import { parse, stringify } from 'qs';
 
-import { RouteStorage, ExtendedRoute, State } from './types';
+import { RouteStorage, State } from './types';
 
-const getParams = (route: ExtendedRoute, pathname: string): object => {
-  const params = pathname.match(route.regexp)?.slice(1);
-
-  if (!params) {
-    return {};
-  }
-
-  return route.keys.reduce((acc: { [key: string]: string }, key, index) => {
-    acc[key.name] = params[index];
-
-    return acc;
-  }, {});
-};
-
-const parseQueryParams = (search: string): object =>
+export const parseQueryParams = (search: string): object =>
   parse(search, { ignoreQueryPrefix: true });
 
 export const stringifyQueryParams = (queryParams: object): string =>
@@ -36,7 +22,7 @@ export const createState = (
     search,
     queryParams: parseQueryParams(search),
     action: null,
-    params: getParams(route, pathname),
+    params: route.getParams(pathname),
     prev: null,
   };
 };

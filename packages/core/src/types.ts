@@ -1,14 +1,12 @@
-import { Key } from 'path-to-regexp';
-
 export type Route = {
   id: string;
   path: string;
 };
 
 export type ExtendedRoute = Route & {
-  keys: Key[];
-  regexp: RegExp;
+  test(pathname: string): boolean;
   createPathname(params: object): string;
+  getParams(pathname: string): object;
 };
 
 export type RouteStorage = {

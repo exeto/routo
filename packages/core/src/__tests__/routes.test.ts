@@ -22,29 +22,52 @@ const routes = [
 ];
 
 describe('createRoute', () => {
-  it('should extend simple route', () => {
-    const extendedRoute = createRoute(routes[0]);
+  const simpleRoute = createRoute(routes[0]);
+  const parameterizedRoute = createRoute(routes[1]);
 
-    expect(extendedRoute).toMatchSnapshot();
+  it('should extend simple route', () => {
+    expect(simpleRoute).toMatchSnapshot();
   });
 
   it('should extend parameterized route', () => {
-    const extendedRoute = createRoute(routes[1]);
+    expect(parameterizedRoute).toMatchSnapshot();
+  });
 
-    expect(extendedRoute).toMatchSnapshot();
+  describe('test', () => {
+    it('should test pathname for simple route', () => {
+      expect(simpleRoute.test('/')).toBeTruthy();
+      expect(simpleRoute.test('/posts')).toBeFalsy();
+      expect(simpleRoute.test('/posts/42')).toBeFalsy();
+    });
+
+    it('should test pathname for parameterized route', () => {
+      expect(parameterizedRoute.test('/posts/42')).toBeTruthy();
+      expect(parameterizedRoute.test('/')).toBeFalsy();
+      expect(parameterizedRoute.test('/posts')).toBeFalsy();
+    });
   });
 
   describe('createPathname', () => {
     it('should return pathname for simple route', () => {
-      const extendedRoute = createRoute(routes[0]);
-
-      expect(extendedRoute.createPathname({})).toBe('/');
+      expect(simpleRoute.createPathname({})).toBe('/');
     });
 
     it('should return pathname for parameterized route', () => {
-      const extendedRoute = createRoute(routes[1]);
+      expect(parameterizedRoute.createPathname({ id: 42 })).toBe('/posts/42');
+    });
+  });
 
-      expect(extendedRoute.createPathname({ id: 42 })).toBe('/posts/42');
+  describe('getParams', () => {
+    it('should return params for simple route', () => {
+      expect(simpleRoute.getParams('/')).toEqual({});
+    });
+
+    it('should return params for parameterized route', () => {
+      expect(parameterizedRoute.getParams('/posts/42')).toEqual({ id: '42' });
+    });
+
+    it('should return empty params for wrong pathname', () => {
+      expect(simpleRoute.getParams('/something')).toEqual({});
     });
   });
 });

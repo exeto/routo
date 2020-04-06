@@ -8,9 +8,26 @@ export const createRoute = (route: Route): ExtendedRoute => {
 
   return {
     ...route,
-    regexp,
-    keys,
+
+    test(pathname: string): boolean {
+      return regexp.test(pathname);
+    },
+
     createPathname: compile(route.path),
+
+    getParams(pathname: string): object {
+      const params = pathname.match(regexp)?.slice(1);
+
+      if (!params) {
+        return {};
+      }
+
+      return keys.reduce((acc: { [key: string]: string }, key, index) => {
+        acc[key.name] = params[index];
+
+        return acc;
+      }, {});
+    },
   };
 };
 
@@ -30,7 +47,7 @@ export const createRouteStorage = (
 
     getByPathname(pathname) {
       return (
-        extendedRoutes.find(({ regexp }) => regexp.test(pathname)) ||
+        extendedRoutes.find(({ test }) => test(pathname)) ||
         extendedNotFoundRoute
       );
     },

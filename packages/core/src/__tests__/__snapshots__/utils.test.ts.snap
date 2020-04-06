@@ -1,0 +1,36 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`createState should create state 1`] = `
+Object {
+  "action": null,
+  "id": "router/POST",
+  "params": Object {
+    "id": "42",
+  },
+  "pathname": "/",
+  "prev": null,
+  "queryParams": Object {},
+  "search": "",
+}
+`;
+
+exports[`createState should create state with query params 1`] = `
+Object {
+  "action": null,
+  "id": "router/POST",
+  "params": Object {
+    "id": "42",
+  },
+  "pathname": "/posts/42",
+  "prev": null,
+  "queryParams": Object {
+    "filters": Object {
+      "age": Object {
+        "eq": "25",
+      },
+    },
+    "sort": "name",
+  },
+  "search": "?sort=name&filters[age][eq]=25",
+}
+`;
