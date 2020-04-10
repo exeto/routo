@@ -1,6 +1,6 @@
 [
   {
     "path": "lib/*.js",
-    "limit": "10 KB"
+    "limit": "500 B"
   }
 ]
