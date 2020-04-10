@@ -12,7 +12,8 @@
   "license": "MIT",
   "scripts": {
     "build": "rm -rf lib && tsc -p tsconfig.build.json",
-    "codecov": "codecov --token=$CODECOV_TOKEN -F react"
+    "codecov": "codecov --token=$CODECOV_TOKEN -F react",
+    "test": "yarn build && size-limit"
   },
   "files": [
     "lib",
@@ -32,9 +33,11 @@
   },
   "devDependencies": {
     "@routo/core": "^0.3.0",
+    "@size-limit/preset-small-lib": "^4.4.5",
     "@types/react": "^16.9.34",
     "codecov": "^3.3.0",
     "react": "^16.8.0",
+    "size-limit": "^4.4.5",
     "typescript": "^3.7.5"
   }
 }

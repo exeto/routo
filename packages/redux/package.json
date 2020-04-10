@@ -12,7 +12,8 @@
   "license": "MIT",
   "scripts": {
     "build": "rm -rf lib && tsc -p tsconfig.build.json",
-    "codecov": "codecov --token=$CODECOV_TOKEN -F redux"
+    "codecov": "codecov --token=$CODECOV_TOKEN -F redux",
+    "test": "yarn build && size-limit"
   },
   "files": [
     "lib",
@@ -32,8 +33,10 @@
   },
   "devDependencies": {
     "@routo/core": "^0.3.0",
+    "@size-limit/preset-small-lib": "^4.4.5",
     "codecov": "^3.3.0",
     "redux": "^4.0.5",
+    "size-limit": "^4.4.5",
     "typescript": "^3.7.5"
   }
 }
