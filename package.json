@@ -10,7 +10,10 @@
     "lint": "eslint --ext .js,.ts,.tsx .",
     "test": "yarn lint && lerna run test",
     "codecov": "lerna run codecov",
-    "precommit": "lint-staged"
+    "precommit": "lint-staged",
+    "prepublishOnly": "yarn test",
+    "release:version": "lerna version --no-git-tag-version",
+    "release:publish": "lerna publish --from-git"
   },
   "workspaces": [
     "packages/*"
