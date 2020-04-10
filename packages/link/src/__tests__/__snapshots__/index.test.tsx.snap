@@ -1,0 +1,77 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Link should change router state after click 1`] = `
+Object {
+  "action": null,
+  "id": "router/HOME",
+  "params": Object {},
+  "pathname": "/",
+  "prev": null,
+  "queryParams": Object {},
+  "search": "",
+}
+`;
+
+exports[`Link should change router state after click 2`] = `
+Object {
+  "action": "PUSH",
+  "id": "router/POSTS",
+  "params": Object {},
+  "pathname": "/posts",
+  "prev": Object {
+    "action": null,
+    "id": "router/HOME",
+    "params": Object {},
+    "pathname": "/",
+    "prev": null,
+    "queryParams": Object {},
+    "search": "",
+  },
+  "queryParams": Object {},
+  "search": "",
+}
+`;
+
+exports[`Link should change router state after click with replace action 1`] = `
+Object {
+  "action": null,
+  "id": "router/HOME",
+  "params": Object {},
+  "pathname": "/",
+  "prev": null,
+  "queryParams": Object {},
+  "search": "",
+}
+`;
+
+exports[`Link should change router state after click with replace action 2`] = `
+Object {
+  "action": "REPLACE",
+  "id": "router/POSTS",
+  "params": Object {},
+  "pathname": "/posts",
+  "prev": Object {
+    "action": null,
+    "id": "router/HOME",
+    "params": Object {},
+    "pathname": "/",
+    "prev": null,
+    "queryParams": Object {},
+    "search": "",
+  },
+  "queryParams": Object {},
+  "search": "",
+}
+`;
+
+exports[`Link should not handle click when metaKey is pressed 1`] = `
+Object {
+  "action": null,
+  "id": "router/HOME",
+  "params": Object {},
+  "pathname": "/",
+  "prev": null,
+  "queryParams": Object {},
+  "search": "",
+}
+`;
