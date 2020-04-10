@@ -1,6 +1,6 @@
 {
   "name": "@routo/redux",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "description": "Redux bindings package for @routo/core",
   "repository": {
     "type": "git",
@@ -31,7 +31,7 @@
     "redux": "^4.0.0"
   },
   "devDependencies": {
-    "@routo/core": "^0.3.0",
+    "@routo/core": "^0.4.0",
     "@size-limit/preset-small-lib": "^4.4.5",
     "codecov": "^3.3.0",
     "redux": "^4.0.5",
