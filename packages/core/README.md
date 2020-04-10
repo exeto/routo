@@ -1,6 +1,6 @@
 # @routo/core
 
-> Simple router for Redux
+> Simple framework-agnostic router
 
 ## Install
 
@@ -10,125 +10,55 @@ yarn add @routo/core
 
 ## Usage
 
-### Create Store
-
 ```js
-import { createStore, combineReducers, applyMiddleware } from 'redux';
 import { createRouter } from '@routo/core';
+
+const HOME = 'router/HOME';
+const POST = 'router/POST';
 
 const routes = [
   {
-    type: 'router/HOME',
+    id: HOME,
     path: '/',
   },
   {
-    type: 'router/POST',
+    id: POST,
     path: '/posts/:id',
   },
 ];
 
-const { reducer, middleware } = createRouter(routes);
-const rootReducer = combineReducers({ router: reducer });
-const store = createStore(rootReducer, applyMiddleware(middleware));
-```
+const router = createRouter(routes);
 
-### Router Component
+const unsubscribe = router.subscribe(state => console.log(state.pathname));
 
-```js
-import { connect } from 'react-redux';
-import { NOT_FOUND } from '@routo/core';
+router.replace(POST, { params: { id: '42' } });
+// /posts/42
 
-const mapping = {
-  'router/HOME': () => 'Home',
-  'router/POST': () => 'Post #',
-  [NOT_FOUND]: () => 'Not Found',
-};
-
-const Router = ({ type }) => {
-  const Component = mapping[type];
-
-  return <Component />;
-};
-
-const mapStateToProps = state => ({
-  type: state.router.type,
-});
-
-export default connect(mapStateToProps)(Router);
+unsubscribe();
 ```
 
 ## State
 
 ```js
 {
-  router: {
-    type: 'router/ITEM',
-    pathname: '/1',
+  id: 'router/POST',
+  pathname: '/posts/42',
+  search: '',
+  queryParams: {},
+  action: 'PUSH',
+  params: { id: '42' },
+  prev: {
+    id: 'router/HOME',
+    pathname: '/',
     search: '',
     queryParams: {},
-    action: 'PUSH',
-    params: {
-      id: 1
-    },
-    prev: {
-      type: 'router/LIST',
-      pathname: '/',
-      search: '',
-      queryParams: {},
-      action: null,
-      params: {}
-    }
+    action: null,
+    params: {}
+    prev: null,
   }
-}
-```
-
-## Navigation
-
-To go to another route, you need to dispatch the action.
-
-Simple route:
-
-```js
-{
-  type: 'router/HOME',
-}
-```
-
-Route with params:
-
-```js
-{
-  type: 'router/POST',
-  payload: {
-    id: '42',
-  },
-}
-```
-
-With `REPLACE` transition action:
-
-```js
-{
-  type: 'router/HOME',
-  meta: {
-    action: 'REPLACE',
-  },
-}
-```
-
-With queryParams (used [qs](https://github.com/ljharb/qs) package):
-
-```js
-{
-  type: 'router/HOME',
-  meta: {
-    queryParams: {
-      sort: 'name',
-    },
-  },
 }
 ```
 
 ## License
 
-[MIT](LICENSE.md) © [Timofey Dergachev](https://exeto.me/)
+[MIT](LICENSE.md) © [Timofey Dergachev](https://exeto.me)

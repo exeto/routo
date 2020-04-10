@@ -1,19 +1,19 @@
 {
-  "name": "@routo/core",
+  "name": "@routo/redux",
   "version": "0.3.0",
-  "description": "Simple framework-agnostic router",
+  "description": "Redux bindings package for @routo/core",
   "repository": {
     "type": "git",
     "url": "https://github.com/exeto/routo.git",
-    "directory": "packages/core"
+    "directory": "packages/redux"
   },
   "main": "lib/index.js",
   "author": "Timofey Dergachev <t@exeto.me> (https://exeto.me)",
   "license": "MIT",
   "scripts": {
     "build": "rm -rf lib && tsc -p tsconfig.build.json",
-    "codecov": "codecov --token=$CODECOV_TOKEN -F core",
-    "test": "jest --coverage && yarn build && size-limit"
+    "codecov": "codecov --token=$CODECOV_TOKEN -F redux",
+    "test": "yarn build && size-limit"
   },
   "files": [
     "lib",
@@ -23,25 +23,20 @@
     "README.md"
   ],
   "keywords": [
-    "history",
-    "route",
+    "redux",
     "router",
-    "routing"
+    "routo"
   ],
-  "dependencies": {
-    "history": "^4.10.1",
-    "path-to-regexp": "^6.1.0",
-    "qs": "^6.7.0"
+  "peerDependencies": {
+    "@routo/core": "^0.3.0",
+    "redux": "^4.0.0"
   },
   "devDependencies": {
+    "@routo/core": "^0.3.0",
     "@size-limit/preset-small-lib": "^4.4.5",
-    "@types/history": "^4.7.5",
-    "@types/jest": "^25.2.1",
-    "@types/qs": "^6.9.0",
     "codecov": "^3.3.0",
-    "jest": "^25.3.0",
+    "redux": "^4.0.5",
     "size-limit": "^4.4.5",
-    "ts-jest": "^25.3.1",
     "typescript": "^3.7.5"
   }
 }

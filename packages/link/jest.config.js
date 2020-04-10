@@ -1,10 +1,13 @@
 'use strict';
 
 module.exports = {
-  testMatch: ['**/*.test.js'],
+  preset: 'ts-jest',
+  moduleNameMapper: {
+    '^@routo/(.*)$': '<rootDir>/../$1/src',
+  },
   collectCoverageFrom: [
-    'src/**/*.js',
-    '!src/**/__tests__/**/*.js',
-    '!src/**/*.test.js',
+    'src/**/*.ts?(x)',
+    '!src/**/__tests__/**/*.ts?(x)',
+    '!src/**/*.test.ts?(x)',
   ],
 };

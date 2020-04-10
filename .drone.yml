@@ -1,15 +1,16 @@
 ---
 kind: pipeline
+type: docker
 name: default
 
 steps:
   - name: install
-    image: node:10.15.3-alpine
+    image: node:12.16.0-alpine
     commands:
       - yarn install
 
   - name: test
-    image: node:10.15.3-alpine
+    image: node:12.16.0-alpine
     commands:
       - yarn test
       - apk add --no-cache git
@@ -20,4 +21,4 @@ steps:
 
 ---
 kind: signature
-hmac: 75697c1860eac59fcb84d01f3d305df332a32116a86a684a1d0b9ed52d884e1c
+hmac: 78898ea4f590e870aee53498621a2f9aaad234fad00f2c5956413a0863921850

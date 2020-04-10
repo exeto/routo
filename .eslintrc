@@ -1,24 +1,21 @@
 {
   "root": true,
-  "extends": ["airbnb-base", "plugin:prettier/recommended"],
+  "extends": [
+    "react-app",
+    "plugin:prettier/recommended",
+    "prettier/@typescript-eslint"
+  ],
   "parserOptions": {
     "sourceType": "script"
   },
   "rules": {
-    "import/prefer-default-export": "off",
     "strict": ["error", "global"]
   },
   "overrides": [
     {
-      "files": ["packages/*/src/**/*.js"],
+      "files": ["**/*.ts?(x)"],
       "parserOptions": {
         "sourceType": "module"
-      }
-    },
-    {
-      "files": ["*.test.js"],
-      "env": {
-        "jest": true
       }
     }
   ]

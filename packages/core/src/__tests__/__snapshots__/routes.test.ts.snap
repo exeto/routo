@@ -1,0 +1,111 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`createRoute should extend parameterized route 1`] = `
+Object {
+  "createPathname": [Function],
+  "getParams": [Function],
+  "id": "router/POST",
+  "path": "/posts/:id",
+  "test": [Function],
+}
+`;
+
+exports[`createRoute should extend simple route 1`] = `
+Object {
+  "createPathname": [Function],
+  "getParams": [Function],
+  "id": "router/HOME",
+  "path": "/",
+  "test": [Function],
+}
+`;
+
+exports[`createRouteStorage getById should return not found route 1`] = `
+Object {
+  "createPathname": [Function],
+  "getParams": [Function],
+  "id": "@@routo/NOT_FOUND",
+  "path": "/404",
+  "test": [Function],
+}
+`;
+
+exports[`createRouteStorage getById should return not found route 2`] = `
+Object {
+  "createPathname": [Function],
+  "getParams": [Function],
+  "id": "@@routo/NOT_FOUND",
+  "path": "/404",
+  "test": [Function],
+}
+`;
+
+exports[`createRouteStorage getById should return parameterized route 1`] = `
+Object {
+  "createPathname": [Function],
+  "getParams": [Function],
+  "id": "router/POST",
+  "path": "/posts/:id",
+  "test": [Function],
+}
+`;
+
+exports[`createRouteStorage getById should return simple route 1`] = `
+Object {
+  "createPathname": [Function],
+  "getParams": [Function],
+  "id": "router/HOME",
+  "path": "/",
+  "test": [Function],
+}
+`;
+
+exports[`createRouteStorage getByPathname should return not found route 1`] = `
+Object {
+  "createPathname": [Function],
+  "getParams": [Function],
+  "id": "@@routo/NOT_FOUND",
+  "path": "/404",
+  "test": [Function],
+}
+`;
+
+exports[`createRouteStorage getByPathname should return not found route 2`] = `
+Object {
+  "createPathname": [Function],
+  "getParams": [Function],
+  "id": "@@routo/NOT_FOUND",
+  "path": "/404",
+  "test": [Function],
+}
+`;
+
+exports[`createRouteStorage getByPathname should return not found route 3`] = `
+Object {
+  "createPathname": [Function],
+  "getParams": [Function],
+  "id": "@@routo/NOT_FOUND",
+  "path": "/404",
+  "test": [Function],
+}
+`;
+
+exports[`createRouteStorage getByPathname should return parameterized route 1`] = `
+Object {
+  "createPathname": [Function],
+  "getParams": [Function],
+  "id": "router/POST",
+  "path": "/posts/:id",
+  "test": [Function],
+}
+`;
+
+exports[`createRouteStorage getByPathname should return simple route 1`] = `
+Object {
+  "createPathname": [Function],
+  "getParams": [Function],
+  "id": "router/HOME",
+  "path": "/",
+  "test": [Function],
+}
+`;

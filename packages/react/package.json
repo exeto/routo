@@ -1,19 +1,19 @@
 {
-  "name": "@routo/link",
+  "name": "@routo/react",
   "version": "0.3.0",
-  "description": "React Link component for @routo/core",
+  "description": "React bindings package for @routo/core",
   "repository": {
     "type": "git",
     "url": "https://github.com/exeto/routo.git",
-    "directory": "packages/link"
+    "directory": "packages/react"
   },
   "main": "lib/index.js",
   "author": "Timofey Dergachev <t@exeto.me> (https://exeto.me)",
   "license": "MIT",
   "scripts": {
     "build": "rm -rf lib && tsc -p tsconfig.build.json",
-    "codecov": "codecov --token=$CODECOV_TOKEN -F link",
-    "test": "jest --coverage && yarn build && size-limit"
+    "codecov": "codecov --token=$CODECOV_TOKEN -F react",
+    "test": "yarn build && size-limit"
   },
   "files": [
     "lib",
@@ -25,30 +25,19 @@
   "keywords": [
     "router",
     "routo",
-    "link",
     "react"
   ],
   "peerDependencies": {
-    "@routo/react": "^0.3.0",
+    "@routo/core": "^0.3.0",
     "react": "^16.8.0"
   },
   "devDependencies": {
     "@routo/core": "^0.3.0",
-    "@routo/react": "^0.3.0",
     "@size-limit/preset-small-lib": "^4.4.5",
-    "@testing-library/jest-dom": "^5.5.0",
-    "@testing-library/react": "^10.0.2",
-    "@types/history": "^4.7.5",
-    "@types/jest": "^25.2.1",
     "@types/react": "^16.9.34",
-    "@types/react-dom": "^16.9.6",
     "codecov": "^3.3.0",
-    "history": "^4.10.1",
-    "jest": "^25.3.0",
     "react": "^16.8.0",
-    "react-dom": "^16.13.1",
     "size-limit": "^4.4.5",
-    "ts-jest": "^25.3.1",
     "typescript": "^3.7.5"
   }
 }
