@@ -52,7 +52,7 @@ describe('createRoute', () => {
     });
 
     it('should return pathname for parameterized route', () => {
-      expect(parameterizedRoute.createPathname({ id: 42 })).toBe('/posts/42');
+      expect(parameterizedRoute.createPathname({ id: '42' })).toBe('/posts/42');
     });
   });
 
