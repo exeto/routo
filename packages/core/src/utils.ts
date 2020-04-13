@@ -1,12 +1,12 @@
 import { Location } from 'history';
 import { parse, stringify } from 'qs';
 
-import { RouteStorage, State } from './types';
+import { RouteStorage, State, QueryParams } from './types';
 
-export const parseQueryParams = (search: string): object =>
+export const parseQueryParams = (search: string): QueryParams =>
   parse(search, { ignoreQueryPrefix: true });
 
-export const stringifyQueryParams = (queryParams: object): string =>
+export const stringifyQueryParams = (queryParams: QueryParams): string =>
   stringify(queryParams, { addQueryPrefix: true, encode: false });
 
 export const createState = (

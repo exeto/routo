@@ -1,6 +1,6 @@
 import { pathToRegexp, compile, Key } from 'path-to-regexp';
 
-import { Route, ExtendedRoute, RouteStorage } from './types';
+import { Route, ExtendedRoute, RouteStorage, Params } from './types';
 
 export const createRoute = (route: Route): ExtendedRoute => {
   const keys: Key[] = [];
@@ -15,7 +15,7 @@ export const createRoute = (route: Route): ExtendedRoute => {
 
     createPathname: compile(route.path),
 
-    getParams(pathname: string): object {
+    getParams(pathname: string): Params {
       const params = pathname.match(regexp)?.slice(1);
 
       if (!params) {

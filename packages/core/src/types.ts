@@ -5,10 +5,14 @@ export type Route = {
   path: string;
 };
 
+export type Params = { [key: string]: string };
+
+export type QueryParams = { [key: string]: any };
+
 export type ExtendedRoute = Route & {
   test(pathname: string): boolean;
-  createPathname(params: object): string;
-  getParams(pathname: string): object;
+  createPathname(params: Params): string;
+  getParams(pathname: string): Params;
 };
 
 export type RouteStorage = {
@@ -20,9 +24,9 @@ export type State = {
   id: string;
   pathname: string;
   search: string;
-  queryParams: object;
+  queryParams: QueryParams;
   action: 'PUSH' | 'POP' | 'REPLACE' | null;
-  params: object;
+  params: Params;
   prev: State | null;
 };
 
@@ -34,8 +38,8 @@ export type Options = {
 export type Listener = (state: State) => void;
 
 export type LocationDescriptor = {
-  params?: object;
-  queryParams?: object;
+  params?: Params;
+  queryParams?: QueryParams;
 };
 
 type Unsubscribe = () => void;

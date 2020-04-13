@@ -1,21 +1,24 @@
-import React, { useCallback, forwardRef, ReactNode, ElementType } from 'react';
+import React, { useCallback, forwardRef, ElementType, FC } from 'react';
 import { useRouterState, useRouter } from '@routo/react';
 
 import { clsx } from './utils';
 
+type Params = { [key: string]: string };
+
+type QueryParams = { [key: string]: any };
+
 type Props = {
   to: string;
-  params?: object;
-  queryParams?: object;
+  params?: Params;
+  queryParams?: QueryParams;
   action?: 'push' | 'replace';
-  children?: ReactNode;
   className?: string;
   activeClassName?: string;
   component?: ElementType;
   onClick?(): void;
 };
 
-const Link = forwardRef(function Link(props: Props, ref) {
+const Link: FC<Props> = forwardRef(function Link(props, ref) {
   const {
     to,
     params,
