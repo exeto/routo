@@ -27,7 +27,7 @@
     "routo"
   ],
   "peerDependencies": {
-    "@routo/core": "^0.3.0",
+    "@routo/core": "^0.5.0",
     "redux": "^4.0.0"
   },
   "devDependencies": {
