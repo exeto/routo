@@ -6,7 +6,7 @@ import { createMemoryHistory } from 'history';
 import { createRouter } from '@routo/core';
 import { Provider } from '@routo/react';
 
-import Link from '../index';
+import Link from '../src/index';
 
 describe('Link', () => {
   const HOME = 'router/HOME';

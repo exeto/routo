@@ -1,5 +1,9 @@
 import { createMemoryHistory } from 'history';
-import { stringifyQueryParams, parseQueryParams, createState } from '../utils';
+import {
+  stringifyQueryParams,
+  parseQueryParams,
+  createState,
+} from '../src/utils';
 
 const queryParamsString = '?sort=name&filters[age][eq]=25';
 
