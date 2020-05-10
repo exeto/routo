@@ -1,5 +1,5 @@
-import { NOT_FOUND } from '../consts';
-import { createRoute, createRouteStorage } from '../routes';
+import { NOT_FOUND } from '../src/consts';
+import { createRoute, createRouteStorage } from '../src/routes';
 
 const notFoundRoute = {
   id: NOT_FOUND,

@@ -1,4 +1,4 @@
-import { clsx } from '../utils';
+import { clsx } from '../src/utils';
 
 describe('clsx', () => {
   it('should return concatenated string', () => {

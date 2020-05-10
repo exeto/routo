@@ -1,7 +1,7 @@
 import { createBrowserHistory } from 'history';
 import { mocked } from 'ts-jest/utils';
 
-import { createRouter, NOT_FOUND } from '../index';
+import { createRouter, NOT_FOUND } from '../src';
 
 jest.mock('history');
 
