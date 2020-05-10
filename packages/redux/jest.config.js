@@ -1,6 +1,7 @@
 'use strict';
 
 module.exports = {
-  displayName: 'link',
+  displayName: 'redux',
   preset: 'ts-jest',
+  testEnvironment: 'node',
 };

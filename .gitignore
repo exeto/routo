@@ -17,4 +17,6 @@ package-lock.json
 
 # PACKAGES
 /packages/*/lib/
-/packages/*/coverage/
+
+# OTHER
+/coverage/
