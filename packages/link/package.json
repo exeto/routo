@@ -27,6 +27,7 @@
     "react"
   ],
   "peerDependencies": {
+    "@routo/core": "^0.5.0",
     "@routo/react": "^0.5.0",
     "react": "^16.8.0"
   },

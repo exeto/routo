@@ -1,5 +1,14 @@
 import { Middleware, Reducer } from 'redux';
-import { Router, State } from '@routo/core';
+import { Router, State, LocationDescriptor } from '@routo/core';
+
+export type ActionPayload = LocationDescriptor & {
+  action?: 'push' | 'replace';
+};
+
+export type Action = {
+  type: string;
+  payload?: ActionPayload;
+};
 
 export const SYNC = '@@routo/SYNC';
 
@@ -13,7 +22,7 @@ export const createMiddleware = <S = any>(
   return ({ dispatch }) => {
     router.subscribe((state) => dispatch({ type: SYNC, payload: state }));
 
-    return (next) => (action) => {
+    return (next) => (action: Action) => {
       const { type, payload } = action;
 
       if (type === MARK_AS_NOT_FOUND) {
@@ -26,7 +35,7 @@ export const createMiddleware = <S = any>(
         return next(action);
       }
 
-      const routerAction: 'push' | 'replace' = payload?.action || 'push';
+      const routerAction = payload?.action || 'push';
 
       router[routerAction](action.type, {
         params: payload?.params,

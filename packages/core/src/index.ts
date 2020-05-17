@@ -1,18 +1,30 @@
 import { createBrowserHistory } from 'history';
 
 import {
+  Listener,
+  LocationDescriptor,
+  Options,
+  Params,
+  QueryParams,
   Route,
   Router,
   State,
-  Options,
-  Listener,
-  LocationDescriptor,
 } from './types';
 import { createRouteStorage } from './routes';
 import { createState, stringifyQueryParams } from './utils';
 import { NOT_FOUND } from './consts';
 
-export { NOT_FOUND, Router, State };
+export {
+  NOT_FOUND,
+  Listener,
+  LocationDescriptor,
+  Options,
+  Params,
+  QueryParams,
+  Route,
+  Router,
+  State,
+};
 
 export const createRouter = (routes: Route[], options?: Options): Router => {
   const notFoundRoute = {

@@ -1,13 +1,10 @@
 import React, { useCallback, forwardRef, ElementType, FC } from 'react';
+import { Params, QueryParams } from '@routo/core';
 import { useRouterState, useRouter } from '@routo/react';
 
 import { clsx } from './utils';
 
-type Params = { [key: string]: string };
-
-type QueryParams = { [key: string]: any };
-
-type Props = {
+export type LinkProps = {
   to: string;
   params?: Params;
   queryParams?: QueryParams;
@@ -18,7 +15,7 @@ type Props = {
   onClick?(): void;
 };
 
-const Link: FC<Props> = forwardRef(function Link(props, ref) {
+const Link: FC<LinkProps> = forwardRef(function Link(props, ref) {
   const {
     to,
     params,

@@ -1,3 +1,21 @@
+## Unreleased
+
+### @routo/core
+
+- Added exports for `Listener`, `LocationDescriptor`, `Options`, `Params`, `QueryParams` and `Route` types
+
+### @routo/link
+
+- Added export for `LinkProps` type
+
+### @routo/react
+
+- Added export for `ProviderProps` type
+
+### @routo/redux
+
+- Added exports for `Action` and `ActionPayload` types
+
 ## 0.5.0 (April 13, 2020)
 
 ### All Packages

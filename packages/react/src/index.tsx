@@ -3,18 +3,17 @@ import React, {
   useContext,
   useState,
   useEffect,
-  ReactNode,
+  FC,
 } from 'react';
 import { Router } from '@routo/core';
 
 export const Context = createContext<Router | null>(null);
 
-type Props = {
+export type ProviderProps = {
   router: Router;
-  children?: ReactNode;
 };
 
-export const Provider = ({ router, children }: Props) => (
+export const Provider: FC<ProviderProps> = ({ router, children }) => (
   <Context.Provider value={router}>{children}</Context.Provider>
 );
 
