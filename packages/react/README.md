@@ -1,3 +1,5 @@
+![routo](/media/logo.svg)
+
 # @routo/react
 
 > React bindings package for @routo/core

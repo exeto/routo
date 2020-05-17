@@ -1,3 +1,5 @@
+![routo](/media/logo.svg)
+
 # @routo/core
 
 > Simple framework-agnostic router
@@ -29,7 +31,7 @@ const routes = [
 
 const router = createRouter(routes);
 
-const unsubscribe = router.subscribe(state => console.log(state.pathname));
+const unsubscribe = router.subscribe((state) => console.log(state.pathname));
 
 router.replace(POST, { params: { id: '42' } });
 // /posts/42

@@ -1,3 +1,5 @@
+![routo](/media/logo.svg)
+
 # @routo/redux
 
 > Redux bindings package for @routo/core

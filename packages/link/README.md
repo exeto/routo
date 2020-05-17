@@ -1,3 +1,5 @@
+![routo](/media/logo.svg)
+
 # @routo/link
 
 > React Link component for @routo/core
