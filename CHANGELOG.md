@@ -7,6 +7,7 @@
 ### @routo/link
 
 - **BREAKING CHANGE**: Removed default export, now use named export `Link`
+- Disabled transition when current route is active
 - Added export for `LinkProps` type
 
 ### @routo/react

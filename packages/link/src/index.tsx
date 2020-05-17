@@ -32,7 +32,8 @@ export const Link: FC<LinkProps> = forwardRef(function Link(props, ref) {
   const { pathname } = useRouterState();
   const Component = component;
   const href = router.createHref(to, { params, queryParams });
-  const activeClass = href === pathname ? activeClassName : null;
+  const isActive = href === pathname;
+  const activeClass = isActive ? activeClassName : null;
 
   const handleClick = useCallback(
     (event) => {
@@ -41,11 +42,14 @@ export const Link: FC<LinkProps> = forwardRef(function Link(props, ref) {
       }
 
       event.preventDefault();
-      router[action](to, { params, queryParams });
 
-      onClick();
+      if (!isActive) {
+        router[action](to, { params, queryParams });
+
+        onClick();
+      }
     },
-    [action, to, onClick, params, queryParams, router],
+    [action, to, onClick, params, queryParams, router, isActive],
   );
 
   return (

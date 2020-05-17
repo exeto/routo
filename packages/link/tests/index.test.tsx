@@ -218,4 +218,25 @@ describe('Link', () => {
     expect(handleClick).not.toBeCalled();
     expect(routerState).toMatchSnapshot();
   });
+
+  it('should not handle click when current route is active', () => {
+    const handleClick = jest.fn();
+    const router = createCustomRouter();
+
+    const { getByText } = render(
+      <Provider router={router}>
+        <Link to={HOME} onClick={handleClick}>
+          Home
+        </Link>
+      </Provider>,
+    );
+
+    const routerState = router.getState();
+    const link = getByText('Home');
+
+    fireEvent.click(link);
+
+    expect(handleClick).not.toBeCalled();
+    expect(routerState).toMatchSnapshot();
+  });
 });

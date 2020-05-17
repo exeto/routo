@@ -64,6 +64,18 @@ Object {
 }
 `;
 
+exports[`Link should not handle click when current route is active 1`] = `
+Object {
+  "action": null,
+  "id": "router/HOME",
+  "params": Object {},
+  "pathname": "/",
+  "prev": null,
+  "queryParams": Object {},
+  "search": "",
+}
+`;
+
 exports[`Link should not handle click when metaKey is pressed 1`] = `
 Object {
   "action": null,
