@@ -2,6 +2,11 @@
 
 # @routo/link
 
+[![npm](https://flat.badgen.net/npm/v/@routo/link)](https://www.npmjs.com/package/@routo/link)
+[![npm bundle size](https://flat.badgen.net/bundlephobia/minzip/@routo/link)](https://bundlephobia.com/result?p=@routo/link)
+[![coverage](https://flat.badgen.net/codecov/c/github/exeto/routo)](https://codecov.io/gh/exeto/routo)
+[![license](https://flat.badgen.net/github/license/exeto/routo)](LICENSE.md)
+
 > React Link component for @routo/core
 
 ## Install

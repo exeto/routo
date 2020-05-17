@@ -2,6 +2,11 @@
 
 # @routo/react
 
+[![npm](https://flat.badgen.net/npm/v/@routo/react)](https://www.npmjs.com/package/@routo/react)
+[![npm bundle size](https://flat.badgen.net/bundlephobia/minzip/@routo/react)](https://bundlephobia.com/result?p=@routo/react)
+[![coverage](https://flat.badgen.net/codecov/c/github/exeto/routo)](https://codecov.io/gh/exeto/routo)
+[![license](https://flat.badgen.net/github/license/exeto/routo)](LICENSE.md)
+
 > React bindings package for @routo/core
 
 ## Install

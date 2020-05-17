@@ -2,6 +2,11 @@
 
 # @routo/redux
 
+[![npm](https://flat.badgen.net/npm/v/@routo/redux)](https://www.npmjs.com/package/@routo/redux)
+[![npm bundle size](https://flat.badgen.net/bundlephobia/minzip/@routo/redux)](https://bundlephobia.com/result?p=@routo/redux)
+[![coverage](https://flat.badgen.net/codecov/c/github/exeto/routo)](https://codecov.io/gh/exeto/routo)
+[![license](https://flat.badgen.net/github/license/exeto/routo)](LICENSE.md)
+
 > Redux bindings package for @routo/core
 
 ## Install

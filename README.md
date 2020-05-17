@@ -1,5 +1,10 @@
 ![routo](/media/logo.svg)
 
+[![npm](https://flat.badgen.net/npm/v/@routo/core)](https://www.npmjs.com/package/@routo/core)
+[![npm bundle size](https://flat.badgen.net/bundlephobia/minzip/@routo/core)](https://bundlephobia.com/result?p=@routo/core)
+[![coverage](https://flat.badgen.net/codecov/c/github/exeto/routo)](https://codecov.io/gh/exeto/routo)
+[![license](https://flat.badgen.net/github/license/exeto/routo)](LICENSE.md)
+
 > Simple framework-agnostic router
 
 Example of use - [react-starter](https://github.com/exeto/react-starter)
