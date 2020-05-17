@@ -13,7 +13,7 @@ yarn add @routo/core @routo/react @routo/link
 The `Link` component must have access to the router context, see [@routo/react](/packages/react/README.md) for details.
 
 ```js
-import Link from '@routo/link';
+import { Link } from '@routo/link';
 
 const Home = () => (
   <Link to="router/POST" params={{ id: '42' }}>

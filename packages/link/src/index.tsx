@@ -15,7 +15,7 @@ export type LinkProps = {
   onClick?(): void;
 };
 
-const Link: FC<LinkProps> = forwardRef(function Link(props, ref) {
+export const Link: FC<LinkProps> = forwardRef(function Link(props, ref) {
   const {
     to,
     params,
@@ -59,5 +59,3 @@ const Link: FC<LinkProps> = forwardRef(function Link(props, ref) {
     </Component>
   );
 });
-
-export default Link;

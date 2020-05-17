@@ -6,6 +6,7 @@
 
 ### @routo/link
 
+- **BREAKING CHANGE**: Removed default export, now use named export `Link`
 - Added export for `LinkProps` type
 
 ### @routo/react
