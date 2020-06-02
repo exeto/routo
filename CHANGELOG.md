@@ -1,4 +1,4 @@
-## Unreleased
+## 0.6.0 (June 2, 2020)
 
 ### @routo/core
 
