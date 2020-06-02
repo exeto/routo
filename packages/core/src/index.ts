@@ -27,13 +27,11 @@ export {
 };
 
 export const createRouter = (routes: Route[], options?: Options): Router => {
-  const notFoundRoute = {
-    id: NOT_FOUND,
-    path: options?.notFoundPath || '/404',
-  };
-
+  const basename = options?.basename || '/';
   const history = options?.history || createBrowserHistory();
-  const routeStorage = createRouteStorage(notFoundRoute, routes);
+  const notFoundPath = options?.notFoundPath || '/404';
+  const routeStorage = createRouteStorage({ routes, basename, notFoundPath });
+
   let state = createState(routeStorage, history.location);
   let listeners: Listener[] = [];
 

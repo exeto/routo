@@ -3,6 +3,7 @@
 ### @routo/core
 
 - Added exports for `Listener`, `LocationDescriptor`, `Options`, `Params`, `QueryParams` and `Route` types
+- Added `basename` option
 
 ### @routo/link
 

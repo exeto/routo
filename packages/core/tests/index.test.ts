@@ -54,6 +54,21 @@ describe('createRouter', () => {
       history.push('/posts');
       expect(router.getState()).toMatchSnapshot();
     });
+
+    it('should check custom basename', () => {
+      const router = createRouter(routes, { basename: '/app' });
+
+      expect(router.getState()).toMatchSnapshot();
+
+      router.push(HOME);
+      expect(router.getState()).toMatchSnapshot();
+
+      router.push(POSTS);
+      expect(router.getState()).toMatchSnapshot();
+
+      router.push(POST, { params: { id: '42' } });
+      expect(router.getState()).toMatchSnapshot();
+    });
   });
 
   describe('getState', () => {

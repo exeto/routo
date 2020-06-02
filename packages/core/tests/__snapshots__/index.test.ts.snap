@@ -138,6 +138,80 @@ Object {
 }
 `;
 
+exports[`createRouter options should check custom basename 1`] = `
+Object {
+  "action": null,
+  "id": "@@routo/NOT_FOUND",
+  "params": Object {},
+  "pathname": "/",
+  "prev": null,
+  "queryParams": Object {},
+  "search": "",
+}
+`;
+
+exports[`createRouter options should check custom basename 2`] = `
+Object {
+  "action": "PUSH",
+  "id": "router/HOME",
+  "params": Object {},
+  "pathname": "/app",
+  "prev": Object {
+    "action": null,
+    "id": "@@routo/NOT_FOUND",
+    "params": Object {},
+    "pathname": "/",
+    "prev": null,
+    "queryParams": Object {},
+    "search": "",
+  },
+  "queryParams": Object {},
+  "search": "",
+}
+`;
+
+exports[`createRouter options should check custom basename 3`] = `
+Object {
+  "action": "PUSH",
+  "id": "router/POSTS",
+  "params": Object {},
+  "pathname": "/app/posts",
+  "prev": Object {
+    "action": "PUSH",
+    "id": "router/HOME",
+    "params": Object {},
+    "pathname": "/app",
+    "prev": null,
+    "queryParams": Object {},
+    "search": "",
+  },
+  "queryParams": Object {},
+  "search": "",
+}
+`;
+
+exports[`createRouter options should check custom basename 4`] = `
+Object {
+  "action": "PUSH",
+  "id": "router/POST",
+  "params": Object {
+    "id": "42",
+  },
+  "pathname": "/app/posts/42",
+  "prev": Object {
+    "action": "PUSH",
+    "id": "router/POSTS",
+    "params": Object {},
+    "pathname": "/app/posts",
+    "prev": null,
+    "queryParams": Object {},
+    "search": "",
+  },
+  "queryParams": Object {},
+  "search": "",
+}
+`;
+
 exports[`createRouter options should check custom history 1`] = `
 Object {
   "action": null,

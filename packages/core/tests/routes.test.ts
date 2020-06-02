@@ -1,11 +1,6 @@
 import { NOT_FOUND } from '../src/consts';
 import { createRoute, createRouteStorage } from '../src/routes';
 
-const notFoundRoute = {
-  id: NOT_FOUND,
-  path: '/404',
-};
-
 const HOME = 'router/HOME';
 const POST = 'router/POST';
 
@@ -72,7 +67,11 @@ describe('createRoute', () => {
 });
 
 describe('createRouteStorage', () => {
-  const routeStorage = createRouteStorage(notFoundRoute, routes);
+  const routeStorage = createRouteStorage({
+    routes,
+    basename: '/',
+    notFoundPath: '/404',
+  });
 
   describe('getById', () => {
     it('should return not found route', () => {

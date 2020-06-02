@@ -1,6 +1,7 @@
 import { pathToRegexp, compile, Key } from 'path-to-regexp';
 
 import { Route, ExtendedRoute, RouteStorage, Params } from './types';
+import { NOT_FOUND } from './consts';
 
 export const createRoute = (route: Route): ExtendedRoute => {
   const keys: Key[] = [];
@@ -31,11 +32,43 @@ export const createRoute = (route: Route): ExtendedRoute => {
   };
 };
 
+const createWithBasename = (basename: string) => {
+  const getPath = (path: string) => {
+    if (basename === '/') {
+      return path;
+    }
+
+    if (path === '/') {
+      return basename;
+    }
+
+    return `${basename}${path}`;
+  };
+
+  return (route: Route) => ({ ...route, path: getPath(route.path) });
+};
+
+type RouteStorageOptions = {
+  routes: Route[];
+  basename: string;
+  notFoundPath: string;
+};
+
 export const createRouteStorage = (
-  notFoundRoute: Route,
-  routes: Route[],
+  options: RouteStorageOptions,
 ): RouteStorage => {
-  const extendedRoutes = [...routes, notFoundRoute].map(createRoute);
+  const { routes, basename, notFoundPath } = options;
+  const withBasename = createWithBasename(basename);
+
+  const notFoundRoute = {
+    id: NOT_FOUND,
+    path: notFoundPath,
+  };
+
+  const extendedRoutes = [...routes, notFoundRoute]
+    .map(withBasename)
+    .map(createRoute);
+
   const extendedNotFoundRoute = extendedRoutes[extendedRoutes.length - 1];
 
   return {

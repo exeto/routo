@@ -31,6 +31,7 @@ export type State = {
 };
 
 export type Options = {
+  basename?: string;
   history?: History;
   notFoundPath?: string;
 };
