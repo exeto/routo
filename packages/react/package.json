@@ -1,6 +1,6 @@
 {
   "name": "@routo/react",
-  "version": "0.6.0",
+  "version": "0.6.1",
   "description": "React bindings package for @routo/core",
   "repository": {
     "type": "git",
@@ -26,11 +26,11 @@
     "react"
   ],
   "peerDependencies": {
-    "@routo/core": "^0.6.0",
+    "@routo/core": "^0.6.1",
     "react": "^16.8.0"
   },
   "devDependencies": {
-    "@routo/core": "^0.6.0",
+    "@routo/core": "^0.6.1",
     "@size-limit/preset-small-lib": "^4.4.5",
     "@testing-library/react-hooks": "^3.2.1",
     "@types/react": "^16.9.34",
