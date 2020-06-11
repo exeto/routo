@@ -1,5 +1,9 @@
 import { NOT_FOUND } from '../src/consts';
-import { createRoute, createRouteStorage } from '../src/routes';
+import {
+  createRoute,
+  createRouteStorage,
+  createWithBasename,
+} from '../src/routes';
 
 const HOME = 'router/HOME';
 const POST = 'router/POST';
@@ -102,5 +106,28 @@ describe('createRouteStorage', () => {
     it('should return parameterized route', () => {
       expect(routeStorage.getByPathname('/posts/42')).toMatchSnapshot();
     });
+  });
+});
+
+describe('createWithBasename', () => {
+  it('should add default basename to route path', () => {
+    const withBasename = createWithBasename('/');
+
+    expect(withBasename(routes[0]).path).toBe('/');
+    expect(withBasename(routes[1]).path).toBe('/posts/:id');
+  });
+
+  it('should add basename to route path', () => {
+    const withBasename = createWithBasename('/app');
+
+    expect(withBasename(routes[0]).path).toBe('/app');
+    expect(withBasename(routes[1]).path).toBe('/app/posts/:id');
+  });
+
+  it('should add basename with trailing slash to route path', () => {
+    const withBasename = createWithBasename('/app/');
+
+    expect(withBasename(routes[0]).path).toBe('/app/');
+    expect(withBasename(routes[1]).path).toBe('/app/posts/:id');
   });
 });

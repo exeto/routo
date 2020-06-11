@@ -32,7 +32,7 @@ export const createRoute = (route: Route): ExtendedRoute => {
   };
 };
 
-const createWithBasename = (basename: string) => {
+export const createWithBasename = (basename: string) => {
   const getPath = (path: string) => {
     if (basename === '/') {
       return path;
@@ -42,7 +42,7 @@ const createWithBasename = (basename: string) => {
       return basename;
     }
 
-    return `${basename}${path}`;
+    return `${basename.replace(/\/$/, '')}${path}`;
   };
 
   return (route: Route) => ({ ...route, path: getPath(route.path) });
