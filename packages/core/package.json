@@ -27,7 +27,7 @@
     "routing"
   ],
   "dependencies": {
-    "history": "^4.10.1",
+    "history": "^5.0.0",
     "path-to-regexp": "^6.1.0",
     "qs": "^6.7.0"
   },
