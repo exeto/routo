@@ -36,7 +36,7 @@
     "@routo/react": "^0.6.1",
     "@size-limit/preset-small-lib": "^4.4.5",
     "@testing-library/jest-dom": "^5.5.0",
-    "@testing-library/react": "^10.0.2",
+    "@testing-library/react": "^11.0.2",
     "@types/history": "^4.7.5",
     "@types/jest": "^26.0.3",
     "@types/react": "^16.9.34",
