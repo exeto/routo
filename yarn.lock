@@ -3163,10 +3163,10 @@ color@^3.0.0:
     color-convert "^1.9.1"
     color-string "^1.5.2"
 
-colorette@^1.2.1:
-  version "1.2.1"
-  resolved "https://registry.yarnpkg.com/colorette/-/colorette-1.2.1.tgz#4d0b921325c14faf92633086a536db6e89564b1b"
-  integrity sha512-puCDz0CzydiSYOrnXpz/PKd69zRrribezjtE9yd4zvytoRc8+RY/KJPvtPFKZS3E3wP6neGyMe0vOTlHO5L3Pw==
+colorette@^1.2.1, colorette@^1.2.2:
+  version "1.2.2"
+  resolved "https://registry.yarnpkg.com/colorette/-/colorette-1.2.2.tgz#cbcc79d5e99caea2dbf10eb3a26fd8b3e6acfa94"
+  integrity sha512-MKGMzyfeuutC/ZJ1cba9NqcNpfeqMUcYmyF1ZFY6/Cn7CNSAKx6a+s48sqLqyAiZuaP2TcqMhoo+dlwFnVxT9w==
 
 colorette@^1.2.2:
   version "1.2.2"
@@ -9320,14 +9320,14 @@ sisteransi@^1.0.4:
   integrity sha512-bLGGlR1QxBcynn2d5YmDX4MGjlZvy2MRBDRNHLJ8VI6l6+9FUiyTFNJ0IveOSP0bcXgVDPRcfGqA0pjaqUpfVg==
 
 size-limit@^4.6.0:
-  version "4.9.2"
-  resolved "https://registry.yarnpkg.com/size-limit/-/size-limit-4.9.2.tgz#b078c2841d6b6bcc576e066b4a6f7b6dd02c124c"
-  integrity sha512-GH1kXz5jHyh+ej0Iis8VpR6auYAsQjGazoYX3qrTgQnMXlYeltLrAcOxOH52IhXxxqE/P58MoxmoZ7MlUZ4wOg==
+  version "4.10.1"
+  resolved "https://registry.yarnpkg.com/size-limit/-/size-limit-4.10.1.tgz#b34e5047e1f08bb2941045b40d13739b2b9e5369"
+  integrity sha512-PEnh88PBmG/Kp6U/IR64Judu/smaq33lEDXf0sJiF1+tHwyrrSEWQkraFLbWKUI6cxT0weXuaTlh1sKYY7EK9Q==
   dependencies:
     bytes "^3.1.0"
     chokidar "^3.5.1"
     ci-job-number "^1.2.2"
-    colorette "^1.2.1"
+    colorette "^1.2.2"
     globby "^11.0.2"
     lilconfig "^2.0.2"
     ora "^5.3.0"
