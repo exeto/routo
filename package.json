@@ -14,7 +14,8 @@
     "codecov": "codecov --token=$CODECOV_TOKEN",
     "prepublishOnly": "yarn test",
     "release:version": "lerna version --no-git-tag-version",
-    "release:publish": "lerna publish from-git"
+    "release:publish": "lerna publish from-git",
+    "prepare": "husky install"
   },
   "workspaces": [
     "packages/*"
@@ -33,7 +34,7 @@
     "eslint-plugin-prettier": "^3.0.1",
     "eslint-plugin-react": "^7.19.0",
     "eslint-plugin-react-hooks": "^4.0.0",
-    "husky": "^4.2.3",
+    "husky": "^6.0.0",
     "jest": "^26.0.1",
     "lerna": "^4.0.0",
     "lint-staged": "^10.0.9",
