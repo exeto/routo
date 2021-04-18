@@ -14,7 +14,8 @@
     "codecov": "codecov --token=$CODECOV_TOKEN",
     "prepublishOnly": "yarn test",
     "release:version": "lerna version --no-git-tag-version",
-    "release:publish": "lerna publish from-git"
+    "release:publish": "lerna publish from-git",
+    "prepare": "husky install"
   },
   "workspaces": [
     "packages/*"
