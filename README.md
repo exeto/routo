@@ -1,4 +1,4 @@
-![routo](/media/logo.svg)
+![routo](./media/logo.svg)
 
 [![npm](https://flat.badgen.net/npm/v/@routo/core)](https://www.npmjs.com/package/@routo/core)
 [![npm bundle size](https://flat.badgen.net/bundlephobia/minzip/@routo/core)](https://bundlephobia.com/result?p=@routo/core)

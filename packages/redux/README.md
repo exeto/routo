@@ -1,4 +1,4 @@
-![routo](/media/logo.svg)
+![routo](../../media/logo.svg)
 
 # @routo/redux
 
