@@ -31,13 +31,15 @@
     "@routo/react": "^0.6.1",
     "react": "^16.8.0"
   },
+  "dependencies": {
+    "@types/history": "^4.7.5"
+  },
   "devDependencies": {
     "@routo/core": "^0.6.1",
     "@routo/react": "^0.6.1",
     "@size-limit/preset-small-lib": "^4.6.0",
     "@testing-library/jest-dom": "^5.5.0",
     "@testing-library/react": "^11.0.2",
-    "@types/history": "^4.7.5",
     "@types/jest": "^26.0.3",
     "@types/react": "^17.0.0",
     "@types/react-dom": "^17.0.0",

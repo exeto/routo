@@ -27,13 +27,13 @@
     "routing"
   ],
   "dependencies": {
+    "@types/history": "^4.7.5",
     "history": "^4.10.1",
     "path-to-regexp": "^6.1.0",
     "qs": "^6.7.0"
   },
   "devDependencies": {
     "@size-limit/preset-small-lib": "^4.6.0",
-    "@types/history": "^4.7.5",
     "@types/jest": "^26.0.3",
     "@types/qs": "^6.9.0",
     "size-limit": "^4.6.0",
