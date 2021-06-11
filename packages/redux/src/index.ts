@@ -45,7 +45,7 @@ export const createMiddleware = <S = any>(
   };
 };
 
-export const createReducer = (router: Router): Reducer<State> => (
-  state = router.getState(),
-  action,
-) => (action.type === SYNC ? action.payload : state);
+export const createReducer =
+  (router: Router): Reducer<State> =>
+  (state = router.getState(), action) =>
+    action.type === SYNC ? action.payload : state;
