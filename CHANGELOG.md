@@ -1,3 +1,17 @@
+## 0.7.0 (June 11, 2021)
+
+### All Packages
+
+- Update dependencies
+
+### @routo/core
+
+- Move `@types/history` to dependencies
+
+### @routo/link
+
+- Move `@types/history` to dependencies
+
 ## 0.6.1 (June 11, 2020)
 
 ### @routo/core
