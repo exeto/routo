@@ -28,7 +28,7 @@
   ],
   "dependencies": {
     "@types/history": "^4.7.5",
-    "history": "^4.10.1",
+    "history": "^5.1.0",
     "path-to-regexp": "^6.1.0",
     "qs": "^6.7.0"
   },
