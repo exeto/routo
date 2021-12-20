@@ -8,7 +8,7 @@
     "directory": "packages/link"
   },
   "main": "lib/index.js",
-  "author": "Timofey Dergachev <t@exeto.me> (https://exeto.me)",
+  "author": "Timofey Dergachev <tim@exeto.me> (https://exeto.me)",
   "license": "MIT",
   "scripts": {
     "build": "rm -rf lib && tsc -p tsconfig.build.json",

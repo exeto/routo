@@ -4,19 +4,19 @@
   "private": true,
   "description": "Routo workspace package",
   "repository": "exeto/routo",
-  "author": "Timofey Dergachev <t@exeto.me> (https://exeto.me)",
+  "author": "Timofey Dergachev <tim@exeto.me> (https://exeto.me)",
   "license": "MIT",
   "scripts": {
     "lint": "eslint --ext .js,.ts,.tsx .",
     "build": "lerna run build",
     "size": "lerna run size",
     "test": "yarn lint && jest --coverage && yarn build && yarn size",
-    "codecov": "codecov --token=$CODECOV_TOKEN",
     "prepublishOnly": "yarn test",
     "release:version": "lerna version --no-git-tag-version",
     "release:publish": "lerna publish from-git",
     "prepare": "husky install"
   },
+  "packageManager": "yarn@3.1.1",
   "workspaces": [
     "packages/*"
   ],
@@ -24,7 +24,6 @@
     "@typescript-eslint/eslint-plugin": "^2.25.0",
     "@typescript-eslint/parser": "^2.25.0",
     "babel-eslint": "^10.1.0",
-    "codecov": "^3.3.0",
     "eslint": "^6.2.0",
     "eslint-config-prettier": "^6.10.1",
     "eslint-config-react-app": "^5.2.1",
