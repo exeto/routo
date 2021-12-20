@@ -32,6 +32,7 @@ export const createMiddleware = <S = any>(
       }
 
       if (!router.hasId(type)) {
+        // eslint-disable-next-line consistent-return
         return next(action);
       }
 
@@ -47,5 +48,6 @@ export const createMiddleware = <S = any>(
 
 export const createReducer =
   (router: Router): Reducer<State> =>
+  // eslint-disable-next-line @typescript-eslint/default-param-last
   (state = router.getState(), action) =>
     action.type === SYNC ? action.payload : state;

@@ -8,7 +8,7 @@
     "directory": "packages/redux"
   },
   "main": "lib/index.js",
-  "author": "Timofey Dergachev <t@exeto.me> (https://exeto.me)",
+  "author": "Timofey Dergachev <tim@exeto.me> (https://exeto.me)",
   "license": "MIT",
   "scripts": {
     "build": "rm -rf lib && tsc -p tsconfig.build.json",
@@ -27,13 +27,13 @@
   ],
   "peerDependencies": {
     "@routo/core": "^0.7.0",
-    "redux": "^4.0.0"
+    "redux": "^4.1.2"
   },
   "devDependencies": {
     "@routo/core": "^0.7.0",
-    "@size-limit/preset-small-lib": "^5.0.1",
-    "redux": "^4.0.5",
-    "size-limit": "^5.0.1",
-    "typescript": "^4.0.2"
+    "@size-limit/preset-small-lib": "^7.0.4",
+    "redux": "^4.1.2",
+    "size-limit": "^7.0.4",
+    "typescript": "^4.5.4"
   }
 }
