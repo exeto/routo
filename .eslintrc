@@ -1,21 +1,38 @@
 {
   "root": true,
-  "extends": [
-    "react-app",
-    "plugin:prettier/recommended",
-    "prettier/@typescript-eslint"
-  ],
-  "parserOptions": {
-    "sourceType": "script"
-  },
-  "rules": {
-    "strict": ["error", "global"]
-  },
   "overrides": [
     {
-      "files": ["**/*.ts?(x)"],
+      "files": ["**/*.js"],
+      "extends": ["airbnb-base", "plugin:prettier/recommended"],
       "parserOptions": {
-        "sourceType": "module"
+        "sourceType": "script"
+      },
+      "rules": {
+        "strict": ["error", "global"]
+      }
+    },
+    {
+      "files": ["**/*.ts?(x)"],
+      "extends": [
+        "airbnb",
+        "airbnb/hooks",
+        "airbnb-typescript",
+        "plugin:prettier/recommended"
+      ],
+      "parserOptions": {
+        "project": "./tsconfig.json"
+      },
+      "rules": {
+        "import/prefer-default-export": "off",
+        "react/prop-types": "off",
+        "react/function-component-definition": "off",
+        "react/jsx-props-no-spreading": "off"
+      }
+    },
+    {
+      "files": ["**/*.test.ts"],
+      "rules": {
+        "import/no-extraneous-dependencies": "off"
       }
     }
   ]

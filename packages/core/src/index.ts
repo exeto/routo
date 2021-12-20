@@ -31,9 +31,9 @@ export const createRouter = (routes: Route[], options?: Options): Router => {
   const history = options?.history || createBrowserHistory();
   const notFoundPath = options?.notFoundPath || '/404';
   const routeStorage = createRouteStorage({ routes, basename, notFoundPath });
+  const listeners: Listener[] = [];
 
   let state = createState(routeStorage, history.location);
-  let listeners: Listener[] = [];
 
   const notify = () => {
     const currentListeners = listeners.slice();
