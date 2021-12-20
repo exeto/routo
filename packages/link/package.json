@@ -1,6 +1,6 @@
 {
   "name": "@routo/link",
-  "version": "0.7.0",
+  "version": "0.8.0",
   "description": "React Link component for @routo/core",
   "repository": {
     "type": "git",
@@ -35,8 +35,8 @@
     "@types/history": "^4.7.9"
   },
   "devDependencies": {
-    "@routo/core": "^0.7.0",
-    "@routo/react": "^0.7.0",
+    "@routo/core": "^0.8.0",
+    "@routo/react": "^0.8.0",
     "@size-limit/preset-small-lib": "^7.0.4",
     "@testing-library/jest-dom": "^5.16.1",
     "@testing-library/react": "^12.1.2",

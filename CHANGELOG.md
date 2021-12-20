@@ -1,3 +1,9 @@
+## 0.8.0 (December 20, 2021)
+
+### All Packages
+
+- Updated dependencies
+
 ## 0.7.0 (June 11, 2021)
 
 ### All Packages
