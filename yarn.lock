@@ -2068,7 +2068,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@routo/core@^0.7.0, @routo/core@workspace:packages/core":
+"@routo/core@^0.8.0, @routo/core@workspace:packages/core":
   version: 0.0.0-use.local
   resolution: "@routo/core@workspace:packages/core"
   dependencies:
@@ -2089,8 +2089,8 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@routo/link@workspace:packages/link"
   dependencies:
-    "@routo/core": ^0.7.0
-    "@routo/react": ^0.7.0
+    "@routo/core": ^0.8.0
+    "@routo/react": ^0.8.0
     "@size-limit/preset-small-lib": ^7.0.4
     "@testing-library/jest-dom": ^5.16.1
     "@testing-library/react": ^12.1.2
@@ -2111,11 +2111,11 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@routo/react@^0.7.0, @routo/react@workspace:packages/react":
+"@routo/react@^0.8.0, @routo/react@workspace:packages/react":
   version: 0.0.0-use.local
   resolution: "@routo/react@workspace:packages/react"
   dependencies:
-    "@routo/core": ^0.7.0
+    "@routo/core": ^0.8.0
     "@size-limit/preset-small-lib": ^7.0.4
     "@testing-library/react-hooks": ^7.0.2
     "@types/react": ^17.0.37
@@ -2134,7 +2134,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@routo/redux@workspace:packages/redux"
   dependencies:
-    "@routo/core": ^0.7.0
+    "@routo/core": ^0.8.0
     "@size-limit/preset-small-lib": ^7.0.4
     redux: ^4.1.2
     size-limit: ^7.0.4
