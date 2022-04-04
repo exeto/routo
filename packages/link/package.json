@@ -29,7 +29,7 @@
   "peerDependencies": {
     "@routo/core": "^0.7.0",
     "@routo/react": "^0.7.0",
-    "react": "^16.8.0"
+    "react": "^18.0.0"
   },
   "dependencies": {
     "@types/history": "^4.7.9"
@@ -44,7 +44,7 @@
     "@types/react": "^17.0.37",
     "@types/react-dom": "^17.0.11",
     "history": "^4.10.1",
-    "react": "^16.8.0",
+    "react": "^18.0.0",
     "react-dom": "^16.8.0",
     "size-limit": "^7.0.4",
     "ts-jest": "^27.1.2",
