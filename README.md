@@ -7,6 +7,8 @@
 
 > Simple framework-agnostic router
 
+# THIS PACKAGE IS NO LONGER MAINTAINED
+
 Example of use - [react-starter](https://github.com/exeto/react-starter)
 
 ## Install

@@ -9,6 +9,8 @@
 
 > React Link component for @routo/core
 
+# THIS PACKAGE IS NO LONGER MAINTAINED
+
 ## Install
 
 ```sh

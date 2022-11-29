@@ -9,6 +9,8 @@
 
 > Simple framework-agnostic router
 
+# THIS PACKAGE IS NO LONGER MAINTAINED
+
 ## Install
 
 ```sh
